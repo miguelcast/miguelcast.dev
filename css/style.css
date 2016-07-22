@@ -1,4 +1,4 @@
-@import url(http://weloveiconfonts.com/api/?family=zocial);@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);@import url(https://fonts.googleapis.com/css?family=Righteous);*,
+@import url(//file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css);@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);@import url(https://fonts.googleapis.com/css?family=Righteous);*,
 *:after,
 *:before {
   -webkit-box-sizing: border-box;
@@ -155,8 +155,9 @@ body {
     .seccionContact .tittle span {
       color: #27AE60; }
 
-[class*="zocial-"]:before {
-  font-family: 'zocial', sans-serif;
+[class*="socicon-"]:before {
+  font-family: "socicon";
+  font-weight: normal;
   font-style: normal;
   color: #fff;
   position: relative;
