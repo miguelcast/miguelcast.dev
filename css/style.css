@@ -1,0 +1,223 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);@import url(https://fonts.googleapis.com/css?family=Righteous);*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Josefin Sans", sans-serif; }
+
+.seccionHome {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #e0e0e0;
+  background-image: url("//miguelcast.github.io/img/background2.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  .seccionHome .header {
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0px; }
+    @media screen and (max-width: 480px) {
+      .seccionHome .header {
+        position: absolute;
+        display: block; } }
+    .seccionHome .header .item {
+      width: 150px;
+      height: 50px; }
+      @media screen and (max-width: 480px) {
+        .seccionHome .header .item {
+          width: 100%;
+          height: inherit;
+          padding: 5px; } }
+      .seccionHome .header .item a {
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -ms-transition: all 1s;
+        -o-transition: all 1s;
+        transition: all 1s; }
+        .seccionHome .header .item a:visited {
+          color: white; }
+        .seccionHome .header .item a:hover {
+          background-repeat: repeat-x;
+          background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(rgba(39, 174, 96, 0.6)));
+          background-image: -webkit-linear-gradient(top, rgba(39, 174, 96, 0.6), transparent);
+          background-image: -moz-linear-gradient(top, rgba(39, 174, 96, 0.6), transparent);
+          background-image: -ms-linear-gradient(top, rgba(39, 174, 96, 0.6), transparent);
+          background-image: -o-linear-gradient(top, rgba(39, 174, 96, 0.6), transparent); }
+  .seccionHome .tittle {
+    font-family: 'Righteous', cursive;
+    font-size: 4em;
+    color: white;
+    margin: 0;
+    text-shadow: black 1px 1px 25px;
+    text-align: center; }
+    @media screen and (max-width: 480px) {
+      .seccionHome .tittle {
+        font-size: 2em; } }
+    .seccionHome .tittle span:last-child {
+      color: #27AE60; }
+  .seccionHome .type {
+    color: white;
+    text-shadow: black 1px 1px 25px;
+    text-align: center; }
+
+.seccionAbout {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #e0e0e0; }
+  .seccionAbout .tittle {
+    font-family: 'Righteous', cursive;
+    font-size: 4em;
+    color: white;
+    margin: 0;
+    text-align: center; }
+    @media screen and (max-width: 480px) {
+      .seccionAbout .tittle {
+        font-size: 2em; } }
+    .seccionAbout .tittle span {
+      color: #27AE60; }
+
+.seccionPortfolio {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #27AE60; }
+  .seccionPortfolio .tittle {
+    font-family: 'Righteous', cursive;
+    font-size: 4em;
+    color: white;
+    margin: 0;
+    text-align: center; }
+    @media screen and (max-width: 480px) {
+      .seccionPortfolio .tittle {
+        font-size: 2em; } }
+    .seccionPortfolio .tittle span {
+      color: #e0e0e0; }
+
+.seccionContact {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #e0e0e0; }
+  .seccionContact .tittle {
+    font-family: 'Righteous', cursive;
+    font-size: 4em;
+    color: white;
+    margin: 0;
+    text-align: center; }
+    @media screen and (max-width: 480px) {
+      .seccionContact .tittle {
+        font-size: 2em; } }
+    .seccionContact .tittle span {
+      color: #27AE60; }
+
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+  font-style: normal;
+  color: #fff;
+  position: relative;
+  font-size: 1.5em; }
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  z-index: 100; }
+  .container a {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s; }
+    @media screen and (max-width: 480px) {
+      .container a {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 50px;
+        margin-left: 5px;
+        margin-bottom: 3px;
+        margin-top: -3px;
+        padding-top: 1px;
+        vertical-align: middle; } }
+    .container a span {
+      text-decoration: none;
+      color: white;
+      padding-left: 8px;
+      opacity: 0;
+      width: 0px;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s; }
+      @media screen and (max-width: 480px) {
+        .container a span {
+          display: none; } }
+    .container a:hover {
+      opacity: .6; }
+      .container a:hover span {
+        opacity: 1;
+        width: 80px; }
+  .container .face {
+    background-color: #3B5998; }
+  .container .tweet {
+    background-color: #4099FF; }
+  .container .flickr {
+    background-color: #ff0084; }
+  .container .github {
+    background-color: #211f1f; }
