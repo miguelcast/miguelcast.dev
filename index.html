@@ -8,7 +8,7 @@
     <meta name="description" content="Miguel Cast Portfolio">
     <meta name="keywords" content="Miguel Cast, Developer, Portfolio, PHP, Javascript">
     <meta name="author" content="MiguelCast">
-    <link rel="shortcut icon" href="../favicon.ico">
+    <!--<link rel="shortcut icon" href="../favicon.ico">-->
 
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 <link href="//miguelcast.github.io/css/style.css" rel="stylesheet"></head>
@@ -16,31 +16,34 @@
 
 <div id="home" class="seccionHome">
     <div class="header">
-        <div class="item">
-            <a href="#home">HOME</a>
+        <div class="logoMenu">
+            <span>&lt;M</span><span>C/&gt;</span>
         </div>
         <div class="item">
-            <a href="#about">ABOUT</a>
+            <a href="#home">INICIO</a>
         </div>
         <div class="item">
-            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#about">ACERCA</a>
         </div>
         <div class="item">
-            <a href="#contact">CONTACT</a>
+            <a href="#portfolio">PORTAFOLIO</a>
+        </div>
+        <div class="item">
+            <a href="#contact">CONTACTO</a>
         </div>
     </div>
 
     <div>
-        <h1 class="tittle">
+        <h1 class="tittle opacityTran">
             <span>&lt;MIGUEL</span> <span>CAST/&gt;</span>
         </h1>
     </div>
 
-    <div class="type">
+    <div class="type opacityTran">
         <span>DESARROLLADOR BACK-END & FRONT-END</span>
     </div>
 
-    <div class="container">
+    <div class="containerSocial opacityTran">
         <a href="https://www.facebook.com/miguel.cast.dev/" target="_blank" class="face">
             <i class="socicon-facebook"></i>
             <span>Facebook</span>
@@ -62,15 +65,79 @@
 </div>
 
 <div id="about" class="seccionAbout">
-    <h2 class="tittle">
-        <span>&lt;ABOUT/&gt;</span>
-    </h2>
+    <div class="aboutContent">
+        <h2 class="tittle">
+            <span>&lt;ACERCA/&gt;</span>
+        </h2>
+        <p>
+            !Hola¡ mi nombre es <em>Miguel Castrill&oacute;n</em>, soy un profesional del desarrollo web y me encanta la fotografía.
+            Vivo en la ciudad de <em>Medell&iacute;n</em> y estoy trabajando actualmente en proyectos para Cognox S.A.S.
+        </p>
+        <p>
+            Tengo un conjunto de diversas habilidades, que van desde el diseño al HTML + CSS + Javascript (JQuery, ReactJs y NodeJs),
+            todo un recorrido con PHP(Laravel y Phalcon), desarrollo personalizado en Joomla, Wordpress y Drupal, y administración de servidores.
+        </p>
+    </div>
+    <div class="imgProfile"></div>
 </div>
 
 <div id="portfolio" class="seccionPortfolio">
-    <h2 class="tittle">
-        <span>&lt;PORTFOLIO/&gt;</span>
-    </h2>
+    <div class="portHeader">
+        <h2 class="tittle">
+            <span>&lt;PORTAFOLIO/&gt;</span>
+        </h2>
+    </div>
+
+    <div class="Portfolio">
+        <div class="Projects">
+            <div class="Project">
+                <div class="Project-Img">
+                    <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/RZWM4T2UAD.jpg" alt="Orbitel - Sales" class="Transition-Transform">
+                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                </div>
+                <div class="Project-Name">Orbitel - Sales</div>
+            </div>
+            <div class="Project">
+                <div class="Project-Img">
+                    <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/S4541GKUE4.jpg" alt="Orbitel - Store" class="Transition-Transform">
+                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                </div>
+                <div class="Project-Name">Orbitel - Store</div>
+            </div>
+            <div class="Project">
+                <div class="Project-Img">
+                    <img src="http://i2.wp.com/negativespace.co/wp-content/uploads/2016/05/0005.jpg?resize=1300%2C867" alt="Gestion compartida" class="Transition-Transform">
+                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                </div>
+                <div class="Project-Name">Gestion compartida</div>
+            </div>
+<!--        </div>
+
+        <div class="Projects">-->
+            <div class="Project">
+                <div class="Project-Img">
+                    <img src="http://65.media.tumblr.com/c48fd03c3c76b93a42dd3bfe2f9e74fd/tumblr_nlfosdHuon1sfie3io1_1280.jpg" alt="ICSO" class="Transition-Transform">
+                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                </div>
+                <div class="Project-Name">ICSO</div>
+            </div>
+            <div class="Project">
+                <div class="Project-Img">
+                    <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/WP1KHDXGOY.jpg" alt="PCFK - CARMEL - LOGUIN" class="Transition-Transform">
+                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                </div>
+                <div class="Project-Name">PCFK - CARMEL - LOGUIN</div>
+            </div>
+            <div class="Project">
+                <div class="Project-Img">
+                    <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/CQI990NSLK.jpg" alt="Gestion compartida" class="Transition-Transform">
+                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                </div>
+                <div class="Project-Name">Red bibliotecas EPM</div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <div id="contact" class="seccionContact">
@@ -79,5 +146,5 @@
     </h2>
 </div>
 
-<script type="text/javascript" src="//miguelcast.github.io/lib.1d8d9.js"></script><script type="text/javascript" src="//miguelcast.github.io/app.1d8d9.js"></script></body>
+<script type="text/javascript" src="//miguelcast.github.io/lib.1020d.js"></script><script type="text/javascript" src="//miguelcast.github.io/app.1020d.js"></script></body>
 </html>

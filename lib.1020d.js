@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"app"}[chunkId]||chunkId) + "." + "1d8d9" + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"app"}[chunkId]||chunkId) + "." + "1020d" + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -88,7 +88,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://miguelcast.github.io/";
+/******/ 	__webpack_require__.p = "//miguelcast.github.io/";
 /******/ })
 /************************************************************************/
 /******/ ([]);

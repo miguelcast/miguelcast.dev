@@ -10,34 +10,23 @@ webpackJsonp([1,0],[
 	//require("./sass/style.scss"); // Para build production
 
 	var $ = __webpack_require__(3);
+	var scrollAnimation = __webpack_require__(6);
 
 	$(function () {
-	    var animationScroll = function (to) {
-	        var sclFrom = $(window).scrollTop();
-	        var sclTo = $(to).offset().top;
-	        var current = sclFrom;
-	        var scrollAnimationTo = function () {
-	            if(sclFrom > sclTo){
-	                current = current - 8;
-	            }else{
-	                current = current + 8;
-	            }
-	            $(window).scrollTop(current);
-	            if((current - 100) <= sclTo && (current + 100) >= sclTo){
-	                $(window).scrollTop(sclTo);
-	                clearInterval(scrollAnimationToInterval);
-	            }
-	        };
-	        var scrollAnimationToInterval = setInterval(scrollAnimationTo, 1);
-	        //$(window).scrollTop($(to).offset().top);
-	    };
-	    
-	    $('.item a').each(function () {
+	    /* page ready opacity 0 to 1 */
+	    setTimeout(function() {
+	        $('.opacityTran').css('opacity', '1');
+	    }, 500);
+
+	    /* Scroll move to menu in page */
+	    $('.header .item a').each(function () {
 	        $(this).on('click', function () {
-	            animationScroll($(this).attr('href'));
+	            scrollAnimation.anchor($(this).attr('href'), $);
 	        });
 	    });
-	    
+
+	    /* Menu animation to scroll */
+	    scrollAnimation.menu('.header', $);
 	});
 
 /***/ },
@@ -10467,6 +10456,45 @@ webpackJsonp([1,0],[
 		// When the module is disposed, remove the <style> tags
 		module.hot.dispose(function() { update(); });
 	}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by miguelcastrillon on 23/07/16.
+	 */
+
+	module.exports.anchor = function (to, $) {
+	    var sclFrom = $(window).scrollTop();
+	    var sclTo = $(to).offset().top;
+	    var current = sclFrom;
+	    var scrollAnimationTo = function () {
+	        if(sclFrom > sclTo){
+	            current = current - 8;
+	        }else{
+	            current = current + 8;
+	        }
+	        $(window).scrollTop(current);
+	        if((current - 100) <= sclTo && (current + 100) >= sclTo){
+	            $(window).scrollTop(sclTo);
+	            clearInterval(scrollAnimationToInterval);
+	        }
+	    };
+	    var scrollAnimationToInterval = setInterval(scrollAnimationTo, 1);
+	};
+
+	module.exports.menu = function(menuId, $) {
+	    $(window).on('scroll', function() {
+	        var current = $(window).scrollTop();
+	        var homeLogoScroll = ($('.tittle').offset().top + 10);
+	        if(current <= homeLogoScroll && $(menuId).hasClass('headerScroll')) {
+	            $(menuId).removeClass('headerScroll');
+	        } else if(current > homeLogoScroll) {
+	            $(menuId).addClass('headerScroll');
+	        }
+	    });
+	};
 
 /***/ }
 ]);

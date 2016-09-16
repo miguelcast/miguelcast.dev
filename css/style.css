@@ -12,17 +12,43 @@ html, body {
 body {
   font-family: "Josefin Sans", sans-serif; }
 
+.opacityTran {
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+
+.headerScroll {
+  background-color: rgba(55, 56, 52, 0.6); }
+  .headerScroll .logoMenu {
+    opacity: 1 !important;
+    height: 50px !important;
+    padding-right: 80px !important;
+    flex-wrap: wrap !important; }
+    .headerScroll .logoMenu span {
+      display: inline !important; }
+
 .seccionHome {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   background-color: #e0e0e0;
-  background-image: url("//miguelcast.github.io/img/background2.jpg");
+  background-image: url("//localhost:5959/img/background2.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -36,11 +62,45 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    left: 0px; }
+    left: 0px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s; }
     @media screen and (max-width: 480px) {
       .seccionHome .header {
         position: absolute;
         display: block; } }
+    .seccionHome .header .logoMenu {
+      font-family: 'Righteous', cursive;
+      font-size: 2em;
+      color: white;
+      height: 0px;
+      padding-right: 0px;
+      opacity: 0;
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;
+      /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;
+      /* TWEENER - IE 10 */
+      display: -webkit-flex;
+      /* NEW - Chrome */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s; }
+      .seccionHome .header .logoMenu span {
+        display: none; }
+      .seccionHome .header .logoMenu span:last-child {
+        color: #27AE60; }
     .seccionHome .header .item {
       width: 150px;
       height: 50px; }
@@ -53,25 +113,25 @@ body {
         color: white;
         text-decoration: none;
         height: 100%;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;
+        /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Chrome */
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        flex-wrap: wrap;
-        -webkit-transition: all 1s;
-        -moz-transition: all 1s;
-        -ms-transition: all 1s;
-        -o-transition: all 1s;
-        transition: all 1s; }
+        flex-wrap: nowrap; }
         .seccionHome .header .item a:visited {
           color: white; }
         .seccionHome .header .item a:hover {
-          background-repeat: repeat-x;
-          background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(rgba(39, 174, 96, 0.6)));
-          background-image: -webkit-linear-gradient(top, rgba(39, 174, 96, 0.6), transparent);
-          background-image: -moz-linear-gradient(top, rgba(39, 174, 96, 0.6), transparent);
-          background-image: -ms-linear-gradient(top, rgba(39, 174, 96, 0.6), transparent);
-          background-image: -o-linear-gradient(top, rgba(39, 174, 96, 0.6), transparent); }
+          position: relative;
+          height: 105%;
+          border-bottom: 3px solid #27AE60; }
   .seccionHome .tittle {
     font-family: 'Righteous', cursive;
     font-size: 4em;
@@ -92,56 +152,197 @@ body {
 .seccionAbout {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   background-color: #e0e0e0; }
-  .seccionAbout .tittle {
-    font-family: 'Righteous', cursive;
-    font-size: 4em;
-    color: white;
-    margin: 0;
-    text-align: center; }
-    @media screen and (max-width: 480px) {
-      .seccionAbout .tittle {
-        font-size: 2em; } }
-    .seccionAbout .tittle span {
-      color: #27AE60; }
+  .seccionAbout .aboutContent {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 70%; }
+    .seccionAbout .aboutContent .tittle {
+      font-family: 'Righteous', cursive;
+      font-size: 4em;
+      color: white;
+      margin: 0;
+      text-align: center; }
+      @media screen and (max-width: 480px) {
+        .seccionAbout .aboutContent .tittle {
+          font-size: 2em; } }
+      .seccionAbout .aboutContent .tittle span {
+        color: #27AE60; }
+    .seccionAbout .aboutContent p {
+      margin: 30px;
+      color: #7B8D9B;
+      font-size: 1.7em;
+      text-align: center;
+      line-height: 1.7em; }
+      @media screen and (max-width: 480px) {
+        .seccionAbout .aboutContent p {
+          font-size: 1em;
+          margin: 10px;
+          line-height: 1.1em; } }
+  .seccionAbout .imgProfile {
+    width: 30%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-image: url("//localhost:5959/img/about.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute; }
 
 .seccionPortfolio {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: #27AE60;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   flex-wrap: wrap;
-  background-color: #27AE60; }
-  .seccionPortfolio .tittle {
-    font-family: 'Righteous', cursive;
-    font-size: 4em;
-    color: white;
-    margin: 0;
+  position: relative; }
+  .seccionPortfolio .portHeader {
+    padding-top: 3em; }
+    .seccionPortfolio .portHeader .tittle {
+      font-family: 'Righteous', cursive;
+      font-size: 4em;
+      color: white;
+      margin: 0;
+      text-align: center; }
+      @media screen and (max-width: 480px) {
+        .seccionPortfolio .portHeader .tittle {
+          font-size: 2em; } }
+      .seccionPortfolio .portHeader .tittle span {
+        color: #e0e0e0; }
+  .seccionPortfolio .Portfolio {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
     text-align: center; }
-    @media screen and (max-width: 480px) {
-      .seccionPortfolio .tittle {
-        font-size: 2em; } }
-    .seccionPortfolio .tittle span {
-      color: #e0e0e0; }
+    .seccionPortfolio .Portfolio .Project {
+      margin: 1em;
+      background-color: white;
+      border: 5px solid white;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer; }
+      .seccionPortfolio .Portfolio .Project .Project-Name {
+        height: 40px;
+        color: #27AE60;
+        font-weight: 500;
+        padding: 10px; }
+      .seccionPortfolio .Portfolio .Project .Project-Img {
+        position: relative;
+        overflow: hidden;
+        height: 200px; }
+        .seccionPortfolio .Portfolio .Project .Project-Img img {
+          width: 350px;
+          vertical-align: bottom;
+          -webkit-transition: all 1s;
+          -moz-transition: all 1s;
+          -ms-transition: all 1s;
+          -o-transition: all 1s;
+          transition: all 1s; }
+        .seccionPortfolio .Portfolio .Project .Project-Img .Project-Img-More {
+          position: absolute;
+          top: 45%;
+          padding: 5px;
+          text-align: center;
+          background-color: rgba(255, 255, 255, 0.5);
+          color: black;
+          text-shadow: 0px 2px 5px gray;
+          font-weight: 600;
+          width: 30%;
+          opacity: 0;
+          -webkit-transition: all 1s;
+          -moz-transition: all 1s;
+          -ms-transition: all 1s;
+          -o-transition: all 1s;
+          transition: all 1s; }
+      .seccionPortfolio .Portfolio .Project:hover .Project-Name {
+        font-weight: 800; }
+      .seccionPortfolio .Portfolio .Project:hover .Project-Img img {
+        -ms-filter: grayscale(80%);
+        filter: grayscale(80%);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -ms-transition: all 1s;
+        -o-transition: all 1s;
+        transition: all 1s; }
+      .seccionPortfolio .Portfolio .Project:hover .Project-Img .Project-Img-More {
+        width: 100%;
+        opacity: 1;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -ms-transition: all 1s;
+        -o-transition: all 1s;
+        transition: all 1s; }
+
+.top {
+  top: 0px; }
+
+.bottom {
+  bottom: 0px; }
 
 .seccionContact {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   background-color: #e0e0e0; }
   .seccionContact .tittle {
     font-family: 'Righteous', cursive;
@@ -163,7 +364,7 @@ body {
   position: relative;
   font-size: 1.5em; }
 
-.container {
+.containerSocial {
   position: fixed;
   width: 100%;
   height: 50px;
@@ -173,7 +374,7 @@ body {
   left: 0px;
   text-align: center;
   z-index: 100; }
-  .container a {
+  .containerSocial a {
     width: 25%;
     display: flex;
     justify-content: center;
@@ -185,7 +386,7 @@ body {
     -o-transition: all 1s;
     transition: all 1s; }
     @media screen and (max-width: 480px) {
-      .container a {
+      .containerSocial a {
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
@@ -195,7 +396,7 @@ body {
         margin-top: -3px;
         padding-top: 1px;
         vertical-align: middle; } }
-    .container a span {
+    .containerSocial a span {
       text-decoration: none;
       color: white;
       padding-left: 8px;
@@ -207,18 +408,18 @@ body {
       -o-transition: all 1s;
       transition: all 1s; }
       @media screen and (max-width: 480px) {
-        .container a span {
+        .containerSocial a span {
           display: none; } }
-    .container a:hover {
+    .containerSocial a:hover {
       opacity: .6; }
-      .container a:hover span {
+      .containerSocial a:hover span {
         opacity: 1;
         width: 80px; }
-  .container .face {
+  .containerSocial .face {
     background-color: #3B5998; }
-  .container .tweet {
+  .containerSocial .tweet {
     background-color: #4099FF; }
-  .container .flickr {
+  .containerSocial .flickr {
     background-color: #ff0084; }
-  .container .github {
+  .containerSocial .github {
     background-color: #211f1f; }
