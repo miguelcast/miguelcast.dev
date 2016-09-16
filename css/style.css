@@ -48,7 +48,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   background-color: #e0e0e0;
-  background-image: url("//localhost:5959/img/background2.jpg");
+  background-image: url("//miguelcast.github.io/img/background2.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -199,7 +199,7 @@ body {
     height: 100%;
     left: 0px;
     top: 0px;
-    background-image: url("//localhost:5959/img/about.png");
+    background-image: url("//miguelcast.github.io/img/about.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
