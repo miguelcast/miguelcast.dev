@@ -12,9 +12,31 @@
 
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 <link href="//miguelcast.github.io/css/style.css" rel="stylesheet"></head>
-<body>
+<body class="opacityTran">
 
 <div id="home" class="seccionHome">
+    <div class="header-mobile">
+        <div class="menu">
+            MENU
+            <div class="items-menu">
+                <div class="item">
+                    <a href="#home">INICIO</a>
+                </div>
+                <div class="item">
+                    <a href="#about">ACERCA</a>
+                </div>
+                <div class="item">
+                    <a href="#portfolio">PORTAFOLIO</a>
+                </div>
+                <div class="item">
+                    <a href="#contact">CONTACTO</a>
+                </div>
+            </div>
+        </div>
+        <div class="logo">
+            <span>&lt;M</span><span>C/&gt;</span>
+        </div>
+    </div>
     <div class="header">
         <div class="logoMenu">
             <span>&lt;M</span><span>C/&gt;</span>
@@ -42,26 +64,6 @@
     <div class="type opacityTran">
         <span>DESARROLLADOR BACK-END & FRONT-END</span>
     </div>
-
-    <div class="containerSocial opacityTran">
-        <a href="https://www.facebook.com/miguel.cast.dev/" target="_blank" class="face">
-            <i class="socicon-facebook"></i>
-            <span>Facebook</span>
-        </a>
-        <a href="https://twitter.com/miguel__cast" target="_blank" class="tweet">
-            <i class="socicon-twitter"></i>
-            <span>Twitter</span>
-        </a>
-        <a href="https://www.flickr.com/miguelcast" target="_blank" class="flickr">
-            <i class="socicon-flickr"></i>
-            <span>Flickr</span>
-        </a>
-        <a href="https://github.com/miguelcast" target="_blank" class="github">
-            <i class="socicon-github"></i>
-            <span>GitHub</span>
-        </a>
-    </div>
-
 </div>
 
 <div id="about" class="seccionAbout">
@@ -90,48 +92,108 @@
 
     <div class="Portfolio">
         <div class="Projects">
-            <div class="Project">
+            <div class="Project" onclick="window.open('http://sales.orbitel.com', '_blank');">
                 <div class="Project-Img">
                     <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/RZWM4T2UAD.jpg" alt="Orbitel - Sales" class="Transition-Transform">
-                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                    <div class="Project-Img-More Transition-All">
+                        Ver mas
+                        <div class="tags">
+                            <span>PHP</span>
+                            <span>MYSQL</span>
+                            <span>Joomla</span>
+                            <span>React Js</span>
+                            <span>Phalcon</span>
+                            <span>JQuery</span>
+                            <span>API Rest</span>
+                            <span>Soap</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="Project-Name">Orbitel - Sales</div>
             </div>
-            <div class="Project">
+            <div class="Project" onclick="window.open('http://www.orbitel.com', '_blank');">
                 <div class="Project-Img">
                     <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/S4541GKUE4.jpg" alt="Orbitel - Store" class="Transition-Transform">
-                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                    <div class="Project-Img-More Transition-All">
+                        Ver mas
+                        <div class="tags">
+                            <span>CSS3</span>
+                            <span>Javascript</span>
+                            <span>PHP</span>
+                            <span>MYSQL</span>
+                            <span>Joomla</span>
+                            <span>JQuery</span>
+                            <span>Soap</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="Project-Name">Orbitel - Store</div>
             </div>
-            <div class="Project">
+            <div class="Project" onclick="window.open('http://gestioncompartida.com/admin', '_blank');">
                 <div class="Project-Img">
                     <img src="http://i2.wp.com/negativespace.co/wp-content/uploads/2016/05/0005.jpg?resize=1300%2C867" alt="Gestion compartida" class="Transition-Transform">
-                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                    <div class="Project-Img-More Transition-All">
+                        Ver mas
+                        <div class="tags">
+                            <span>PHP</span>
+                            <span>MYSQL</span>
+                            <span>Bootstrap</span>
+                            <span>JQuery</span>
+                            <span>Wordpress</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="Project-Name">Gestion compartida</div>
             </div>
-<!--        </div>
-
-        <div class="Projects">-->
-            <div class="Project">
+            <div class="Project" onclick="window.open('http://icso.co/icso/public', '_blank');">
                 <div class="Project-Img">
                     <img src="http://65.media.tumblr.com/c48fd03c3c76b93a42dd3bfe2f9e74fd/tumblr_nlfosdHuon1sfie3io1_1280.jpg" alt="ICSO" class="Transition-Transform">
-                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                    <div class="Project-Img-More Transition-All">
+                        Ver mas
+                        <div class="tags">
+                            <span>Code QR</span>
+                            <span>PDF</span>
+                            <span>PHP</span>
+                            <span>MYSQL</span>
+                            <span>Bootstrap</span>
+                            <span>JQuery</span>
+                            <span>Laravel</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="Project-Name">ICSO</div>
             </div>
-            <div class="Project">
+            <div class="Project" onclick="window.open('http://pcfk.com.co', '_blank');">
                 <div class="Project-Img">
                     <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/WP1KHDXGOY.jpg" alt="PCFK - CARMEL - LOGUIN" class="Transition-Transform">
-                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                    <div class="Project-Img-More Transition-All">
+                        Ver mas
+                        <div class="tags">
+                            <span>PHP</span>
+                            <span>SQL Server</span>
+                            <span>CSS</span>
+                            <span>Javascript</span>
+                            <span>Node Js</span>
+                            <span>AWS</span>
+                            <span>Squarespace</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="Project-Name">PCFK - CARMEL - LOGUIN</div>
             </div>
-            <div class="Project">
+            <div class="Project" onclick="window.open('http://pcfk.com.co', '_blank');">
                 <div class="Project-Img">
                     <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/CQI990NSLK.jpg" alt="Gestion compartida" class="Transition-Transform">
-                    <div class="Project-Img-More Transition-All">Ver mas</div>
+                    <div class="Project-Img-More Transition-All">
+                        Ver mas
+                        <div class="tags">
+                            <span>PHP</span>
+                            <span>Mysql</span>
+                            <span>Drupal</span>
+                            <span>API Rest</span>
+                            <span>Soap</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="Project-Name">Red bibliotecas EPM</div>
             </div>
@@ -142,9 +204,29 @@
 
 <div id="contact" class="seccionContact">
     <h2 class="tittle">
-        <span>&lt;CONTACT/&gt;</span>
+        <span>&lt;CONTACTO/&gt;</span>
     </h2>
+
+    <div class="containerSocial opacityTran">
+        <a href="https://www.facebook.com/miguel.cast.dev/" target="_blank" class="face">
+            <i class="socicon-facebook"></i>
+            <span>Facebook</span>
+        </a>
+        <a href="https://twitter.com/miguel__cast" target="_blank" class="tweet">
+            <i class="socicon-twitter"></i>
+            <span>Twitter</span>
+        </a>
+        <a href="https://www.flickr.com/miguelcast" target="_blank" class="flickr">
+            <i class="socicon-flickr"></i>
+            <span>Flickr</span>
+        </a>
+        <a href="https://github.com/miguelcast" target="_blank" class="github">
+            <i class="socicon-github"></i>
+            <span>GitHub</span>
+        </a>
+    </div>
+
 </div>
 
-<script type="text/javascript" src="//miguelcast.github.io/lib.1020d.js"></script><script type="text/javascript" src="//miguelcast.github.io/app.1020d.js"></script></body>
+<script type="text/javascript" src="//miguelcast.github.io/lib.683df.js"></script><script type="text/javascript" src="//miguelcast.github.io/app.683df.js"></script></body>
 </html>

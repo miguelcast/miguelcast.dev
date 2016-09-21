@@ -10,16 +10,18 @@ webpackJsonp([1,0],[
 	//require("./sass/style.scss"); // Para build production
 
 	var $ = __webpack_require__(3);
-	var scrollAnimation = __webpack_require__(6);
+	var scrollAnimation = __webpack_require__(7);
+	var menuMobile = __webpack_require__(6);
 
 	$(function () {
+
 	    /* page ready opacity 0 to 1 */
 	    setTimeout(function() {
 	        $('.opacityTran').css('opacity', '1');
 	    }, 500);
 
 	    /* Scroll move to menu in page */
-	    $('.header .item a').each(function () {
+	    $('.header .item a, .header-mobile .item a').each(function () {
 	        $(this).on('click', function () {
 	            scrollAnimation.anchor($(this).attr('href'), $);
 	        });
@@ -27,6 +29,12 @@ webpackJsonp([1,0],[
 
 	    /* Menu animation to scroll */
 	    scrollAnimation.menu('.header', $);
+	    scrollAnimation.blockFixed('div.containerSocial', '#contact', 'containerSocialBlock', $);
+
+	    $('.header-mobile .menu').on('click', function () {
+	        menuMobile.toggle('.header-mobile .menu .items-menu', $);
+	    });
+
 	});
 
 /***/ },
@@ -10465,6 +10473,21 @@ webpackJsonp([1,0],[
 	 * Created by miguelcastrillon on 23/07/16.
 	 */
 
+	module.exports.toggle = function (divItemsMenu, $) {
+	    $(divItemsMenu).toggleClass('show-menu');
+	    setTimeout(function () {
+	        $(divItemsMenu).toggleClass('transition-show-menu');
+	    }, 300);
+	};
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by miguelcastrillon on 23/07/16.
+	 */
+
 	module.exports.anchor = function (to, $) {
 	    var sclFrom = $(window).scrollTop();
 	    var sclTo = $(to).offset().top;
@@ -10495,6 +10518,19 @@ webpackJsonp([1,0],[
 	        }
 	    });
 	};
+
+	module.exports.blockFixed = function (idElement, idElementLimit, classAdd, $) {
+	    $(window).on('scroll', function() {
+	        var current = $(window).scrollTop();
+	        var limitTolock = $(idElementLimit).offset().top;
+	        if ((limitTolock - $(idElementLimit).height()) <= current) {
+	            $($(idElement)[0]).addClass(classAdd);
+	        }else if(limitTolock > current && $(idElement).hasClass(classAdd)){
+	            $($(idElement)[0]).removeClass(classAdd);
+	        }
+	    });
+
+	}
 
 /***/ }
 ]);
