@@ -1,5 +1,4 @@
 User-agent: *
 
 Crawl-delay: 60
-Disallow: /*.js$
 Sitemap: http://miguelcast.co/sitemap.xml
