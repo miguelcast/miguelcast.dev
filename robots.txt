@@ -2,5 +2,4 @@ User-agent: *
 
 Crawl-delay: 60
 Disallow: /*.js$
-Disallow: /*.css$
 Sitemap: http://miguelcast.co/sitemap.xml
