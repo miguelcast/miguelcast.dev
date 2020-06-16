@@ -1,2 +1,1 @@
-# miguelcast.github.io
-Personal branding
+# Miguel Cast | Blog
