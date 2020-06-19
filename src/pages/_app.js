@@ -1,14 +1,13 @@
+import * as React from "react";
 import { ThemeProvider } from 'styled-components';
 
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
-};
+import GlobalStyles from "../styles/GlobalStyles";
+import theme from "../styles/themes/base";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <Component {...pageProps} />
     </ThemeProvider>
   );
