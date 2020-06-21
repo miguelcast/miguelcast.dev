@@ -1,6 +1,10 @@
+import * as React from "react";
 import Head from 'next/head'
 
 import HeadLogo from "../components/Head";
+import Button from "../components/Button";
+import Logo from "../components/Logo";
+import Text from "../components/Text";
 
 export default function Home() {
   return (
@@ -11,20 +15,20 @@ export default function Home() {
       </Head>
 
       <header style={{ height: 80, display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
-        <h1 className="title">
-          MiguelCast
-        </h1>
+        <Logo />
       </header>
 
       <main>
         <section style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
-            <p>I’m FullStack Developer from Colombia 🇨🇴</p>
-            <p>
-              I love to build beauty and
+            <Text variant="subtitle" fontSize={1}>
+              I’m FullStack Developer from Colombia 🇨🇴
+            </Text>
+            <Text variant="title" fontSize={5}>
+              I love to build beauty and <br />
               performance applications
-            </p>
-            <button type="button">I'm here to help!</button>
+            </Text>
+            <Button type="button">I'm here to help!</Button>
           </div>
           <HeadLogo />
         </section>

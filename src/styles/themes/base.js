@@ -9,12 +9,13 @@ const theme = {
     yellow: '#F5D18C',
     white: '#ffffff'
   },
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 12, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 20, 24, 32, 48],
-  font: {
+  fonts: {
     heading: "'Comfortaa', cursive",
     body: "'Inter', sans-serif"
   },
+  radii: [0, 5, "50%"],
   breakpoints: ['40em', '52em', '64em', '80em'],
 };
 
@@ -26,10 +27,12 @@ theme.space.small = theme.space[1];
 theme.space.medium = theme.space[2];
 theme.space.large = theme.space[3];
 
-theme.mediaQueries = {
-  small: `@media screen and (min-width: ${theme.breakpoints[0]})`,
-  medium: `@media screen and (min-width: ${theme.breakpoints[1]})`,
-  large: `@media screen and (min-width: ${theme.breakpoints[2]})`,
-}
+/*
+  theme.mediaQueries = {
+    small: `@media screen and (min-width: ${theme.breakpoints[0]})`,
+    medium: `@media screen and (min-width: ${theme.breakpoints[1]})`,
+    large: `@media screen and (min-width: ${theme.breakpoints[2]})`,
+  }
+*/
 
 export default theme;
