@@ -21,10 +21,10 @@ export default function Home() {
       <main>
         <section style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
-            <Text variant="subtitle" fontSize={1}>
+            <Text variant="subtitle" fontSize={2}>
               I’m FullStack Developer from Colombia 🇨🇴
             </Text>
-            <Text variant="title" fontSize={5}>
+            <Text variant="title" fontSize={6}>
               I love to build beauty and <br />
               performance applications
             </Text>

@@ -21,7 +21,7 @@ const Button = styled('button')(
 Button.defaultProps = {
   variant: "primary",
   fontFamily: "heading",
-  fontSize: 3,
+  fontSize: 4,
   px: 5,
   py: 4,
   borderRadius: 1,

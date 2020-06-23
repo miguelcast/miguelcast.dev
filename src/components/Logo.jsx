@@ -1,15 +1,18 @@
 import * as React from "react";
 import styled from "styled-components";
-import { typography, color, compose } from "styled-system";
+import css from "@styled-system/css";
 
 const LogoStyled = styled.span`
-  ${compose(
-    typography,
-    color
-  )}
+  ${css({
+    fontFamily: 'heading',
+    fontSize: 4,
+    color: 'white'
+  })}
   > span {
-    color: ${props => props.theme.colors.primary};
-    font-size: ${props => props.theme.fontSizes[4]}px;
+    ${css({
+      color: "primary",
+      fontSize: 5
+    })}
   }
 `;
 
@@ -20,11 +23,5 @@ function Logo({ ...rest }) {
     </LogoStyled>
   );
 }
-
-Logo.defaultProps = {
-  fontFamily: 'heading',
-  fontSize: 3,
-  color: 'white'
-};
 
 export default Logo;

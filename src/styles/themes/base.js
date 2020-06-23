@@ -10,7 +10,7 @@ const theme = {
     white: '#ffffff'
   },
   space: [0, 4, 8, 12, 16, 32, 64, 128, 256, 512],
-  fontSizes: [12, 14, 16, 20, 24, 32, 48],
+  fontSizes: [0, 12, 14, 16, 20, 24, 32, 48],
   fonts: {
     heading: "'Comfortaa', cursive",
     body: "'Inter', sans-serif"

@@ -11,16 +11,16 @@ const Text = styled('p')(
       variants: {
         paragraph: {
           fontFamily: "body",
-          fontSize: 1,
+          fontSize: 2,
           lineHeight: '1.6%'
         },
         title: {
           fontFamily: "heading",
-          fontSize: 4
+          fontSize: 5
         },
         subtitle: {
           fontFamily: "heading",
-          fontSize: 3
+          fontSize: 4
         }
       }
     })
