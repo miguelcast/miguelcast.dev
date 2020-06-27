@@ -5,39 +5,68 @@ import HeadLogo from "../components/Head";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
 import Text from "../components/Text";
+import Waves from "../components/Waves";
+import Social from "../components/Social";
+import Dot from "../components/Dot";
+import PostItem from "../components/PostItem";
 
 export default function Home() {
   return (
-    <div style={{ margin: "0 auto", maxWidth: 1100 }}>
+    <>
       <Head>
         <title>Blog | Miguel Cast</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header style={{ height: 80, display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
-        <Logo />
-      </header>
+      <Waves />
+      <div style={{ position: "relative" }}>
+        <header style={{ margin: "0 auto", maxWidth: 1100, height: 80, display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%",  }}>
+          <Logo />
+          <Social />
+        </header>
 
-      <main>
-        <section style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
-            <Text variant="subtitle" fontSize={2}>
-              I’m FullStack Developer from Colombia 🇨🇴
-            </Text>
-            <Text variant="title" fontSize={6}>
-              I love to build beauty and <br />
-              performance applications
-            </Text>
-            <Button type="button">I'm here to help!</Button>
+        <section style={{ margin: "0 auto", maxWidth: 1100, marginTop: "2rem" }}>
+          <div style={{ width: "83.33%", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <Text variant="subtitle" fontSize={2}>
+                I’m FullStack Developer from Colombia 🇨🇴
+              </Text>
+              <Text variant="title" fontSize={6}>
+                I love to build beauty and <br />
+                performance applications
+              </Text>
+              <Button type="button">I'm here to help!</Button>
+            </div>
+            <HeadLogo />
           </div>
-          <HeadLogo />
         </section>
-        <section>
-          <h2>Sharing my neurons</h2>
+
+      </div>
+
+      <main style={{ margin: "0 auto", maxWidth: 1100 }}>
+        <section style={{ width: "60%" }}>
+          <Text as="h2" variant="title" fontSize={6} fontWeight={400} color="secondary">
+            <Dot /> Sharing my neurons
+          </Text>
+
+          <PostItem
+            title="Performance react hooks"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus diam cursus tellus nisl metus, quam dignissim bibendum sit. Viverra magna phasellus scelerisque tincidunt vulputate. Amend, jd lacadaa soca meyor mej."
+          />
+
+          <PostItem
+            title="Performance react hooks"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus diam cursus tellus nisl metus, quam dignissim bibendum sit. Viverra magna phasellus scelerisque tincidunt vulputate. Amend, jd lacadaa soca meyor mej."
+          />
+
+          <PostItem
+            title="Performance react hooks"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus diam cursus tellus nisl metus, quam dignissim bibendum sit. Viverra magna phasellus scelerisque tincidunt vulputate. Amend, jd lacadaa soca meyor mej."
+          />
         </section>
       </main>
 
-      <footer>
+      <footer style={{ margin: "0 auto", maxWidth: 1100 }}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -46,6 +75,6 @@ export default function Home() {
           Powered by Miguel Cast
         </a>
       </footer>
-    </div>
+    </>
   )
 }

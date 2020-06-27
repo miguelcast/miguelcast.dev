@@ -1,17 +1,18 @@
 import * as React from "react";
 import styled from "styled-components";
-import { variant, typography, color, space, compose } from "styled-system";
+import { variant, typography, color, space, display, compose } from "styled-system";
 
 const Text = styled('p')(
   compose(
     space,
     typography,
     color,
+    display,
     variant({
       variants: {
         paragraph: {
           fontFamily: "body",
-          fontSize: 2,
+          fontSize: 3,
           lineHeight: '1.6%'
         },
         title: {
