@@ -1,7 +1,6 @@
 import * as React from "react";
 import Head from 'next/head'
 
-import HeadLogo from "../components/Head";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
 import Text from "../components/Text";
@@ -9,6 +8,7 @@ import Waves from "../components/Waves";
 import Social from "../components/Social";
 import Dot from "../components/Dot";
 import PostItem from "../components/PostItem";
+import DiscoText from "../components/DiscoText";
 
 export default function Home() {
   return (
@@ -28,16 +28,19 @@ export default function Home() {
         <section style={{ margin: "0 auto", maxWidth: 1100, marginTop: "2rem" }}>
           <div style={{ width: "83.33%", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div>
-              <Text variant="subtitle" fontSize={2}>
+              <Text variant="heading" fontSize={2}>
                 I’m FullStack Developer from Colombia 🇨🇴
               </Text>
               <Text variant="title" fontSize={6}>
-                I love to build beauty and <br />
-                performance applications
+                I love to dance with code and to build performance apps
               </Text>
               <Button type="button">I'm here to help!</Button>
             </div>
-            <HeadLogo />
+            <DiscoText>
+              <span>CODE</span>
+              <span>CODE</span>
+              <span>CODE</span>
+            </DiscoText>
           </div>
         </section>
 
@@ -72,7 +75,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by Miguel Cast
+          © 2020-present Miguel Cast. All Rights Reserved.
         </a>
       </footer>
     </>

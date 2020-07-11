@@ -2,6 +2,7 @@ const theme = {
   colors: {
     grays: {
       100: '#F1EEEE',
+      300: '#C3C3C3',
       800: '#222530',
       900: '#0E0E0E'
     },
@@ -13,7 +14,8 @@ const theme = {
   fontSizes: [0, 12, 14, 16, 20, 24, 32, 48],
   fonts: {
     heading: "'Comfortaa', cursive",
-    body: "'Inter', sans-serif"
+    body: "'Inter', sans-serif",
+    alternative: "'Concert One', cursive"
   },
   radii: [0, 5, "50%"],
   breakpoints: ['40em', '52em', '64em', '80em'],
@@ -22,10 +24,16 @@ const theme = {
 theme.colors.primary = theme.colors.red;
 theme.colors.secondary = theme.colors.yellow;
 theme.colors.base = theme.colors.grays["800"];
+theme.colors.text = theme.colors.white;
 
 theme.space.small = theme.space[1];
 theme.space.medium = theme.space[2];
 theme.space.large = theme.space[3];
+
+// Logo name component
+theme.colors.logo = {};
+theme.colors.logo.primary = theme.colors.white;
+theme.colors.logo.secondary = theme.colors.grays["300"];
 
 /*
   theme.mediaQueries = {

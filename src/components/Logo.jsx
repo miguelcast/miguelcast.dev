@@ -5,13 +5,12 @@ import css from "@styled-system/css";
 const LogoStyled = styled.span`
   ${css({
     fontFamily: 'heading',
-    fontSize: 4,
-    color: 'white'
+    fontSize: 5,
+    color: 'logo.primary'
   })}
   > span {
     ${css({
-      color: "primary",
-      fontSize: 5
+      color: "logo.secondary",
     })}
   }
 `;
@@ -19,7 +18,7 @@ const LogoStyled = styled.span`
 function Logo({ ...rest }) {
   return (
     <LogoStyled {...rest}>
-      Miguel<span>C</span>ast
+      miguel<span>cast</span>.
     </LogoStyled>
   );
 }

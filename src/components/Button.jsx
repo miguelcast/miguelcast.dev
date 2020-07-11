@@ -10,8 +10,15 @@ const Button = styled('button')(
     variant({
       variants: {
         primary: {
-          color: "secondary",
-          bg: "primary",
+          color: "primary",
+          bg: "white",
+          '&:hover': {
+            bg: 'secondary'
+          }
+        },
+        link: {
+          color: "text",
+          bg: "transparent",
         }
       }
     })

@@ -5,6 +5,8 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from "../styles/GlobalStyles";
 import theme from "../styles/themes/base";
 
+const GOOGLE_FONTS = 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Inter&family=Concert+One&display=swap';
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -14,7 +16,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="About Miguel Cast. Tutorials focus on React, Performance, GraphQl, CSS and HTML" />
 
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Inter&display=swap" rel="stylesheet" />
+        <link rel="preload" as="style" href={GOOGLE_FONTS} />
+        <link href={GOOGLE_FONTS} rel="stylesheet" />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
