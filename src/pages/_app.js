@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import GlobalStyles from "../styles/GlobalStyles";
 import theme from "../styles/themes/base";
+// import theme from "../styles/themes/light";
 
 const GOOGLE_FONTS = 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Inter&family=Concert+One&display=swap';
 

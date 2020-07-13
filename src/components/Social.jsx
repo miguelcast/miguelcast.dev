@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { color, typography, flexbox, layout, compose } from "styled-system";
 import { FiGithub, FiTwitter, FiMoon } from "react-icons/fi";
 
-function Social() {
+function Social({ social }) {
   return (
     <DivSC
       color="grays.100"
@@ -12,12 +12,16 @@ function Social() {
       alignItems="baseline"
       justifyContent="space-around"
     >
-      <a href="https://github.com/miguelcast" target="_blank" rel="noopener noreferrer">
-        <FiGithub />
-      </a>
-      <a href="https://twitter.com/miguel__cast" target="_blank" rel="noopener noreferrer">
-        <FiTwitter />
-      </a>
+      {social?.github && (
+        <a href={social.github} target="_blank" rel="noopener noreferrer">
+          <FiGithub />
+        </a>
+      )}
+      {social?.twitter && (
+        <a href={social?.twitter} target="_blank" rel="noopener noreferrer">
+          <FiTwitter />
+        </a>
+      )}
       <FiMoon />
     </DivSC>
   );

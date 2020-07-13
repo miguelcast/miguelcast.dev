@@ -17,7 +17,6 @@ const Text = styled('p')(
       },
       title: {
         fontFamily: "heading",
-        fontSize: 5
       },
       subtitle: {
         fontFamily: "heading",
