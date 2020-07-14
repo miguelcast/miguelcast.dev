@@ -1,12 +1,10 @@
 import * as React from "react";
 import Head from "next/head";
-import { ThemeProvider } from 'styled-components';
 
 import GlobalStyles from "../styles/GlobalStyles";
-import theme from "../styles/themes/base";
-// import theme from "../styles/themes/light";
+import ThemeProvider from "../styles/ThemeProvider";
 
-const GOOGLE_FONTS = 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Inter&family=Concert+One&display=swap';
+const GOOGLE_FONTS = 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Inter&family=Concert+One&display=fallback';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,7 +18,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="preload" as="style" href={GOOGLE_FONTS} />
         <link href={GOOGLE_FONTS} rel="stylesheet" />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <GlobalStyles />
         <Component {...pageProps} />
       </ThemeProvider>

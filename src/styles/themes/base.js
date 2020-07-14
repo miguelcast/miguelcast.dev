@@ -13,9 +13,9 @@ const theme = {
   space: [0, 4, 8, 12, 16, 32, 64, 128, 256, 512],
   fontSizes: [0, 12, 14, 16, 20, 24, 32, 48],
   fonts: {
-    heading: "'Comfortaa', cursive",
-    body: "'Inter', sans-serif",
-    alternative: "'Concert One', cursive"
+    heading: "'Comfortaa',Futura,-apple-system,cursive",
+    body: "'Inter',Futura,-apple-system,sans-serif",
+    alternative: "'Concert One',Helvetica,-apple-system,cursive"
   },
   radii: [0, 5, "50%"],
   breakpoints: ['40em', '52em', '64em', '80em'],
@@ -23,24 +23,9 @@ const theme = {
 
 theme.colors.primary = theme.colors.red;
 theme.colors.secondary = theme.colors.yellow;
-theme.colors.base = theme.colors.grays["800"];
-theme.colors.text = theme.colors.white;
 
 theme.space.small = theme.space[1];
 theme.space.medium = theme.space[2];
 theme.space.large = theme.space[3];
 
-// Logo name component
-theme.colors.logo = {};
-theme.colors.logo.primary = theme.colors.white;
-theme.colors.logo.secondary = theme.colors.grays["300"];
-
-/*
-  theme.mediaQueries = {
-    small: `@media screen and (min-width: ${theme.breakpoints[0]})`,
-    medium: `@media screen and (min-width: ${theme.breakpoints[1]})`,
-    large: `@media screen and (min-width: ${theme.breakpoints[2]})`,
-  }
-*/
-
-export default theme;
+export { theme };

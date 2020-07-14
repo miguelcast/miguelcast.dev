@@ -11,8 +11,9 @@ export default createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: ${props => props.theme.fonts.body};
-    background-color: ${props => props.theme.colors.base};
+    background-color: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.grays["100"]};
+    transition: color 350ms ease 0s, background 350ms ease 0s;
   }
   
   a,
@@ -24,5 +25,6 @@ export default createGlobalStyle`
   
   h1, h2, h3, h4, h5, h6, p {
     text-rendering: optimizelegibility;
+    transition: color 350ms ease 0s, background 350ms ease 0s;
   }
 `;

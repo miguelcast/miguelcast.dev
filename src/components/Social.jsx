@@ -1,12 +1,16 @@
 import * as React from 'react';
 import styled from "styled-components";
 import { color, typography, flexbox, layout, compose } from "styled-system";
-import { FiGithub, FiTwitter, FiMoon } from "react-icons/fi";
+import { FiGithub, FiTwitter, FiMoon, FiSun } from "react-icons/fi";
+
+import Button from "./Button";
+import useThemeToggle from "../hooks/useThemeToggle";
 
 function Social({ social }) {
+  const { theme, onToggleTheme } = useThemeToggle();
   return (
     <DivSC
-      color="grays.100"
+      color="text"
       fontSize={6}
       width={160}
       alignItems="baseline"
@@ -22,7 +26,9 @@ function Social({ social }) {
           <FiTwitter />
         </a>
       )}
-      <FiMoon />
+      <Button type="button" variant="link" px={0} py={0} fontSize={6} onClick={onToggleTheme}>
+        {theme === 'dark' ? <FiMoon /> : <FiSun /> }
+      </Button>
     </DivSC>
   );
 }
@@ -35,6 +41,9 @@ const DivSC = styled.div`
     flexbox,
     layout
   )}
+  & > a > svg {
+    ${color}
+  }
 `;
 
 export default Social;
