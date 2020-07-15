@@ -12,4 +12,9 @@ theme.colors.logo = {};
 theme.colors.logo.primary = theme.colors.grays["900"];
 theme.colors.logo.secondary = theme.colors.white;
 
+// Post tags
+theme.colors.tag = {};
+theme.colors.tag.text = theme.colors.primary;
+theme.colors.tag.bg = "#eebdc6";
+
 export default theme;

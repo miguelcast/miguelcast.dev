@@ -4,6 +4,7 @@ import css from "@styled-system/css";
 import { FiArrowRight } from "react-icons/fi";
 
 import Text from "../components/Text";
+import Tag from "./Tag";
 
 const Article = styled.article`
   display: flex;
@@ -21,6 +22,12 @@ const Article = styled.article`
         color: "secondary"
       })}
     }
+  }
+  .tags {
+    ${css({
+      my: -3,
+      mb: 3
+    })};
   }
 `;
 
@@ -60,11 +67,14 @@ const Link = styled(Text)`
   }
 `;
 
-function PostItem({ title, description }) {
+function PostItem({ title, description, tags }) {
   const theme = useTheme();
   return (
     <Article>
       <Text as="h3" variant="subtitle" fontWeight={700}>{title}</Text>
+      <div className="tags">
+        {tags?.map(tag => <Tag key={tag.id}>{tag.name}</Tag>)}
+      </div>
       <Text as="p" variant="paragraph" display="contents" letterSpacing={1}>
         {description}
       </Text>

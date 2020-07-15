@@ -17,11 +17,15 @@ const HOME_QUERY = `
       key
       value
     }
-    posts {
+    posts (orderBy: publishedAt_DESC) {
       id
       slug
       name
       shortDescription
+      tags {
+        id
+        name
+      }
     }
   }
 `;
@@ -84,6 +88,7 @@ export default function Home({ configuration, posts }) {
               key={post.id}
               title={post.name}
               description={post.shortDescription}
+              tags={post?.tags}
             />
           ))}
 
