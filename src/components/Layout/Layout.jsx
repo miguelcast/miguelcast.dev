@@ -1,10 +1,11 @@
 import * as React from 'react';
-import Waves from "../Hero/Waves";
+import Link from "next/link";
 import styled from "styled-components";
 import css from "@styled-system/css";
 
 import Logo from "../System/Logo";
 import Social from "../System/Social";
+import Waves from "../Hero/Waves";
 
 const Top = styled.div`
   position: relative;
@@ -49,7 +50,11 @@ function Layout({ waves, social, Hero, children }) {
       {waves && <Waves />}
       <Top>
         <Header>
-          <Logo />
+          <Link href="/">
+            <a>
+              <Logo />
+            </a>
+          </Link>
           {social && (
             <Social social={social} />
           )}

@@ -1,13 +1,12 @@
 import * as React from "react";
 import Head from 'next/head';
+import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
 
 import Layout from "../components/Layout/Layout";
-import Button from "../components/System/Button";
 import Text from "../components/System/Text";
 import Dot from "../components/System/Dot";
 import PostItem from "../components/Post/PostItem";
-import DiscoText from "../components/Hero/DiscoText";
 import Hero from "../components/Hero/Hero";
 
 const HOME_QUERY = `
@@ -63,12 +62,15 @@ export default function Home({ configuration, posts }) {
           <Dot /> Sharing my neurons
         </Text>
         {posts?.map(post => (
-          <PostItem
-            key={post.id}
-            title={post.name}
-            description={post.shortDescription}
-            tags={post?.tags}
-          />
+          <Link key={post.id} href="/blog/[slug]" as={`/blog/${post.slug}`}>
+            <a>
+              <PostItem
+                title={post.name}
+                description={post.shortDescription}
+                tags={post?.tags}
+              />
+            </a>
+          </Link>
         ))}
       </section>
 
