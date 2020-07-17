@@ -22,7 +22,7 @@ const theme = {
     alternative: "'Concert One',Helvetica,-apple-system,cursive"
   },
   radii: [0, 5, "50%"],
-  breakpoints: ['40em', '52em', '64em', '80em'],
+  breakpoints: ['40em', '52em', '64em', '80em']
 };
 
 theme.colors.primary = theme.colors.red;
@@ -31,5 +31,8 @@ theme.colors.secondary = theme.colors.yellow;
 theme.space.small = theme.space[1];
 theme.space.medium = theme.space[2];
 theme.space.large = theme.space[3];
+
+theme.sizes = {};
+theme.sizes.maxContainer = 1100;
 
 export { theme };

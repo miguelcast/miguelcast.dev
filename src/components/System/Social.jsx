@@ -4,7 +4,7 @@ import { color, typography, flexbox, layout, compose } from "styled-system";
 import { FiGithub, FiTwitter, FiMoon, FiSun } from "react-icons/fi";
 
 import Button from "./Button";
-import useThemeToggle from "../hooks/useThemeToggle";
+import useThemeToggle from "../../hooks/useThemeToggle";
 
 function Social({ social }) {
   const { theme, onToggleTheme } = useThemeToggle();

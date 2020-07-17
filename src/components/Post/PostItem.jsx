@@ -3,10 +3,10 @@ import styled from "styled-components";
 import css from "@styled-system/css";
 import { FiArrowRight } from "react-icons/fi";
 
-import Text from "../components/Text";
-import Tag from "./Tag";
+import Text from "../System/Text";
+import Tag from "../System/Tag";
 
-const Article = styled.article`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 24px;
@@ -69,7 +69,7 @@ const Link = styled(Text)`
 
 function PostItem({ title, description, tags }) {
   return (
-    <Article>
+    <Section>
       <Text as="h3" variant="subtitle" fontWeight={700}>{title}</Text>
       <div className="tags">
         {tags?.map(tag => <Tag key={tag.id}>{tag.name}</Tag>)}
@@ -83,7 +83,7 @@ function PostItem({ title, description, tags }) {
         <FiArrowRight />
         <FiArrowRight />
       </Link>
-    </Article>
+    </Section>
   );
 }
 

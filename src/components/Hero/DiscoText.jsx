@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 
-import useMousePosition from "../hooks/useMousePosition";
+import useMousePosition from "../../hooks/useMousePosition";
 
 const positions = [5, 10, 15, 20, 25, 30, 35];
 const initialPositions = Array(7).fill(0);
