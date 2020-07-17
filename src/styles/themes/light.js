@@ -2,6 +2,7 @@ import { theme as base } from './base';
 
 const theme = JSON.parse(JSON.stringify(base));
 
+theme.colors.secondary = theme.colors.yellows["500"];
 theme.colors.base = theme.colors.grays["300"];
 theme.colors.text = theme.colors.grays["900"];
 theme.colors.waves = theme.colors.grays["300"];

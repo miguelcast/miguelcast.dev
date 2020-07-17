@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import css from "@styled-system/css";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -38,7 +38,7 @@ const Link = styled(Text)`
   svg:first-child {
     margin-left: 5px;
     ${css({
-      color: "white"
+      color: "text"
     })};
     z-index: 3;
   }
@@ -68,14 +68,13 @@ const Link = styled(Text)`
 `;
 
 function PostItem({ title, description, tags }) {
-  const theme = useTheme();
   return (
     <Article>
       <Text as="h3" variant="subtitle" fontWeight={700}>{title}</Text>
       <div className="tags">
         {tags?.map(tag => <Tag key={tag.id}>{tag.name}</Tag>)}
       </div>
-      <Text as="p" variant="paragraph" display="contents" letterSpacing={1}>
+      <Text as="p" variant="paragraph" display="contents" letterSpacing={0.8}>
         {description}
       </Text>
       <Link as="span" variant="subtitle" fontSize={4} display="inline-flex" alignItems="center" mt={3}>

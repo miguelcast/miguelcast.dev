@@ -8,6 +8,10 @@ const theme = {
     },
     red: '#D43845',
     yellow: '#F5D18C',
+    yellows: {
+      100: '#F5D18C',
+      500: '#f5a713'
+    },
     white: '#ffffff'
   },
   space: [0, 4, 8, 12, 16, 32, 64, 128, 256, 512],
