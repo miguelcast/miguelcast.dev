@@ -34,5 +34,6 @@ theme.space.large = theme.space[3];
 
 theme.sizes = {};
 theme.sizes.maxContainer = 1100;
+theme.sizes.maxArticle = 720;
 
 export { theme };

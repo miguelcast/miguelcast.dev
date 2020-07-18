@@ -9,36 +9,6 @@ import Dot from "../components/System/Dot";
 import PostItem from "../components/Post/PostItem";
 import Hero from "../components/Hero/Hero";
 
-const HOME_QUERY = `
-  query Home {
-    configurations {
-      key
-      value
-    }
-    posts (orderBy: publishedAt_DESC) {
-      id
-      slug
-      name
-      shortDescription
-      tags {
-        id
-        name
-      }
-    }
-  }
-`;
-
-export async function getStaticProps() {
-  const graphCMS = new GraphQLClient(process.env.API_GRAPH_CMS);
-  const { configurations, posts } = await graphCMS.request(HOME_QUERY);
-  return {
-    props: {
-      configuration: Object.fromEntries(configurations.map(config => Object.values(config))),
-      posts
-    }
-  };
-}
-
 export default function Home({ configuration, posts }) {
   return (
     <Layout
@@ -76,4 +46,34 @@ export default function Home({ configuration, posts }) {
 
     </Layout>
   )
+}
+
+const HOME_QUERY = `
+  query Home {
+    configurations {
+      key
+      value
+    }
+    posts (orderBy: publishedAt_DESC) {
+      id
+      slug
+      name
+      shortDescription
+      tags {
+        id
+        name
+      }
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const graphCMS = new GraphQLClient(process.env.API_GRAPH_CMS);
+  const { configurations, posts } = await graphCMS.request(HOME_QUERY);
+  return {
+    props: {
+      configuration: Object.fromEntries(configurations.map(config => Object.values(config))),
+      posts
+    }
+  };
 }
