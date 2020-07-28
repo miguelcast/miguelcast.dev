@@ -8,15 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@styled-system/css": "^5.1.5",
-    "graphql-request": "^2.0.0",
-    "next": "9.4.4",
+    "@styled-system/css": "5.1.5",
+    "graphql-request": "2.0.0",
+    "next": "9.5.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-icons": "^3.10.0",
-    "react-markdown": "^4.3.1",
+    "react-icons": "3.10.0",
+    "react-markdown": "4.3.1",
     "styled-components": "5.1.1",
-    "styled-system": "^5.1.5"
+    "styled-system": "5.1.5"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "1.10.7"
