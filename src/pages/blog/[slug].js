@@ -1,9 +1,11 @@
 import React from 'react';
+import Head from "next/head";
 import styled from "styled-components";
 import css from "@styled-system/css";
 import { GraphQLClient } from 'graphql-request';
 import ReactMarkdown from 'react-markdown';
 
+import * as renderers from "../../components/MardownRenders";
 import Layout from "../../components/Layout/Layout";
 import Text from "../../components/System/Text";
 
@@ -22,20 +24,18 @@ const Article = styled.article`
       color: 'secondary',
     })};
   }
-  pre {
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-  }
 `;
 
 export default function BlogPost({ post, social }) {
   return(
     <Layout social={social}>
+      <Head>
+        <title>{post?.name} | Miguel Cast</title>
+      </Head>
       <Text as="h1" variant="heading" textAlign="center" py={6} px={1}>{post?.name}</Text>
       {post?.content && (
         <Article>
-          <ReactMarkdown source={post.content} />
+          <ReactMarkdown source={post.content} renderers={renderers} />
         </Article>
       )}
     </Layout>
