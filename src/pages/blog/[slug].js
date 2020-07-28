@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import css from "@styled-system/css";
 import { GraphQLClient } from 'graphql-request';
+import ReactMarkdown from 'react-markdown';
 
 import Layout from "../../components/Layout/Layout";
 import Text from "../../components/System/Text";
@@ -14,17 +15,28 @@ const Article = styled.article`
     color: 'text',
     lineHeight: '1.6',
     m: '0 auto'
-  })}
+  })};
+  h2 {
+    ${css({
+      fontFamily: "heading",
+      color: 'secondary',
+    })};
+  }
+  pre {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
 `;
 
 export default function BlogPost({ post, social }) {
   return(
     <Layout social={social}>
       <Text as="h1" variant="heading" textAlign="center" py={6} px={1}>{post?.name}</Text>
-      {post?.article?.html && (
-        <Article
-          dangerouslySetInnerHTML={{ __html: post.article.html }}
-        />
+      {post?.content && (
+        <Article>
+          <ReactMarkdown source={post.content} />
+        </Article>
       )}
     </Layout>
   );
@@ -38,9 +50,7 @@ const POST_QUERY = `
     post (where: { slug: $slug }) {
       slug
       name
-      article {
-        html
-      }
+      content
     }
   }
 `;
