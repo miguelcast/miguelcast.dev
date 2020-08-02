@@ -26,8 +26,7 @@ export default function Home({ configuration, posts }) {
         <title>Blog | Miguel Cast</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <section style={{ width: "60%" }}>
+      <section>
         <Text as="h2" variant="title" fontSize={6} fontWeight={400} color="secondary">
           <Dot /> Sharing my neurons
         </Text>
@@ -43,7 +42,6 @@ export default function Home({ configuration, posts }) {
           </Link>
         ))}
       </section>
-
     </Layout>
   )
 }

@@ -12,10 +12,11 @@ const Top = styled.div`
 `;
 
 const Header = styled.header`
-  margin: 0 auto;
   ${css({
-    maxWidth: "maxContainer"
+    maxWidth: "maxContainer",
+    px: [4, null, null, 0]
   })};
+  margin: 0 auto;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -24,21 +25,23 @@ const Header = styled.header`
 
 const Section = styled.section`
   ${css({
-    maxWidth: "maxContainer"
+    maxWidth: "maxContainer",
   })};
   margin: 2rem auto 0;
 `;
 
 const Main = styled.main`
   ${css({
-    maxWidth: "maxContainer"
+    maxWidth: "maxContainer",
+    px: [4, null, null, 0]
   })};
   margin: 0 auto;
 `;
 
 const Footer = styled.footer`
   ${css({
-    maxWidth: "maxContainer"
+    maxWidth: "maxContainer",
+    px: [4, null, null, 0]
   })};
   margin: 2rem auto 2rem;
   text-align: center;
@@ -69,13 +72,7 @@ function Layout({ waves, social, Hero, children }) {
       </Main>
 
       <Footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          © 2020-present Miguel Cast. All Rights Reserved.
-        </a>
+        © 2020-present Miguel Cast. All Rights Reserved.
       </Footer>
     </>
   );

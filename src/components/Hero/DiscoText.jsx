@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { layout } from 'styled-system';
 import css from '@styled-system/css';
 
 import useMousePosition from "../../hooks/useMousePosition";
@@ -38,14 +39,14 @@ function DiscoText({ children }) {
   }, [position.x]);
 
   return (
-    <Paragraph className={loadClass} ref={pElement}>
+    <Paragraph className={loadClass} ref={pElement} display={["none", "none", "inline-flex"]}>
       {children}
     </Paragraph>
   );
 }
 
 const Paragraph = styled.p`
-  display: inline-flex;
+  ${layout};
   flex-direction: column;
   font-size: 140px;
   line-height: 120px;
@@ -53,10 +54,10 @@ const Paragraph = styled.p`
   margin: 0;
 
   ${css({
-  fontFamily: 'alternative',
-  color: "transparent",
-  fontWeight: "bold"
-})}
+    fontFamily: 'alternative',
+    color: "transparent",
+    fontWeight: "bold"
+  })}
   
   &.load {
     text-shadow: ${getTextShadow(initialPositions)};  
