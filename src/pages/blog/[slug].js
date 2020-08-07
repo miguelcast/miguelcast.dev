@@ -28,11 +28,12 @@ const Article = styled.article`
 
 export default function BlogPost({ post, social }) {
   return(
-    <Layout social={social}>
+    <Layout waves social={social} Hero={(
+      <Text as="h1" variant="heading" textAlign="center" py={6} px={1}>{post?.name}</Text>
+    )}>
       <Head>
         <title>{post?.name} | Miguel Cast</title>
       </Head>
-      <Text as="h1" variant="heading" textAlign="center" py={6} px={1}>{post?.name}</Text>
       {post?.content && (
         <Article>
           <ReactMarkdown source={post.content} renderers={renderers} />

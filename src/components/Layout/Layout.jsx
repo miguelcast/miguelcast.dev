@@ -35,6 +35,7 @@ const Main = styled.main`
     maxWidth: "maxContainer",
     px: [4, null, null, 0]
   })};
+  position: relative;
   margin: 0 auto;
 `;
 

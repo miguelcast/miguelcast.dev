@@ -23,8 +23,16 @@ export default function Home({ configuration, posts }) {
       )}
     >
       <Head>
-        <title>Blog | Miguel Cast</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Miguel Cast</title>
+        <meta name="description" content="About Miguel Cast. Tutorials focus on React, Performance, GraphQl, CSS and HTML" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Miguel Cast" />
+        <meta property="og:description" content="About Miguel Cast. Tutorials focus on React, Performance, GraphQl, CSS and HTML" />
+
+        <meta name="twitter:creator" content="@miguel__cast" />
+        <meta name="twitter:title" content="Miguel Cast" />
+        <meta name="twitter:description" content="About Miguel Cast. Tutorials focus on React, Performance, GraphQl, CSS and HTML" />
       </Head>
       <section>
         <Text as="h2" variant="title" fontSize={6} fontWeight={400} color="secondary">

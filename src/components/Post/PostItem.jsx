@@ -72,7 +72,7 @@ function PostItem({ title, description, tags }) {
     <Section>
       <Text as="h3" variant="subtitle" fontWeight={700}>{title}</Text>
       <div className="tags">
-        {tags?.map(tag => <Tag key={tag.id}>{tag.name}</Tag>)}
+        {tags?.map(tag => <Tag key={tag.id} as="span">{tag.name}</Tag>)}
       </div>
       <Text as="p" variant="paragraph" display="contents" letterSpacing={0.8}>
         {description}
