@@ -27,7 +27,7 @@ function Hero({ title, text, buttonText }) {
         <Text variant="title" fontSize={[5, null, 6]} lineHeight={[1.2, null, 1.4]}>
           {title}
         </Text>
-        <Button type="button">{buttonText}</Button>
+        {/* <Button type="button">{buttonText}</Button> */}
       </div>
       <DiscoText>
         <span>CODE</span>

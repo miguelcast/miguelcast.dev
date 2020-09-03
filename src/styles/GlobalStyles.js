@@ -13,6 +13,11 @@ export default createGlobalStyle`
     font-family: ${props => props.theme.fonts.body};
     background-color: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.grays["100"]};
+  }
+  
+  html,
+  body,
+  footer {
     transition: color 350ms ease 0s, background 350ms ease 0s;
   }
   

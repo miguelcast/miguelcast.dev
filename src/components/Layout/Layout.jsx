@@ -4,6 +4,7 @@ import styled from "styled-components";
 import css from "@styled-system/css";
 
 import Logo from "../System/Logo";
+import Text from "../System/Text.jsx";
 import Social from "../System/Social";
 import Waves from "../Hero/Waves";
 
@@ -41,11 +42,19 @@ const Main = styled.main`
 
 const Footer = styled.footer`
   ${css({
-    maxWidth: "maxContainer",
-    px: [4, null, null, 0]
-  })};
-  margin: 2rem auto 2rem;
+  bg: "waves",
+  mt: 5,
+  mb: '25px',
+  px: [4, null, null, 0],
+  py: 3
+})};
   text-align: center;
+  box-shadow:
+    0 5px 0 #ecc02066,
+    0 10px 0 #ec792066,
+    0 15px 0 #EA343466,
+    0 20px 0 #87202066,
+    0 25px 0 #640E0E66;
 `;
 
 function Layout({ waves, social, Hero, children }) {
@@ -73,7 +82,9 @@ function Layout({ waves, social, Hero, children }) {
       </Main>
 
       <Footer>
-        © 2020-present Miguel Cast. All Rights Reserved.
+        <Text color="textLight" fontSize={2} variant="alternative">
+          © 2020-present Miguel Cast. All Rights Reserved.
+        </Text>
       </Footer>
     </>
   );

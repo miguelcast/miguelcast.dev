@@ -4,6 +4,7 @@ const theme = JSON.parse(JSON.stringify(base));
 
 theme.colors.base = theme.colors.grays["800"];
 theme.colors.text = theme.colors.white;
+theme.colors.textLight = theme.colors.grays["300"];
 theme.colors.waves = theme.colors.grays["900"];
 theme.colors.background = theme.colors.grays["800"];
 
