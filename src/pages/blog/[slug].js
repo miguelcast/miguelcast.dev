@@ -4,10 +4,15 @@ import styled from "styled-components";
 import css from "@styled-system/css";
 import { GraphQLClient } from 'graphql-request';
 import ReactMarkdown from 'react-markdown';
+import htmlParser from 'react-markdown/plugins/html-parser';
 
 import * as renderers from "../../components/MardownRenders";
 import Layout from "../../components/Layout/Layout";
 import Text from "../../components/System/Text";
+
+const parseHtml = htmlParser({
+  isValidNode: node => node.type !== 'script'
+})
 
 const Article = styled.article`
   font-size: 18px;
@@ -36,7 +41,12 @@ export default function BlogPost({ post, social }) {
       </Head>
       {post?.content && (
         <Article>
-          <ReactMarkdown source={post.content} renderers={renderers} />
+          <ReactMarkdown
+            escapeHtml={false}
+            source={post.content}
+            renderers={renderers}
+            astPlugins={[parseHtml]}
+          />
         </Article>
       )}
     </Layout>

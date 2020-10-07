@@ -36,7 +36,7 @@ export default function Home({ configuration, posts }) {
       </Head>
       <section>
         <Text as="h2" variant="title" fontSize={6} fontWeight={400} color="secondary">
-          <Dot /> Sharing my neurons
+          <Dot /> Sharing my perspectives
         </Text>
         {posts?.map(post => (
           <Link key={post.id} href="/blog/[slug]" as={`/blog/${post.slug}`}>

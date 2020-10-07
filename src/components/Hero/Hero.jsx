@@ -3,7 +3,6 @@ import styled from "styled-components";
 import css from "@styled-system/css";
 
 import Text from "../System/Text";
-import Button from "../System/Button";
 import DiscoText from "./DiscoText";
 
 const HeroWrapper = styled.div`
@@ -17,7 +16,7 @@ const HeroWrapper = styled.div`
   align-items: center;
 `;
 
-function Hero({ title, text, buttonText }) {
+function Hero({ title, text }) {
   return (
     <HeroWrapper>
       <div>
@@ -27,7 +26,6 @@ function Hero({ title, text, buttonText }) {
         <Text variant="title" fontSize={[5, null, 6]} lineHeight={[1.2, null, 1.4]}>
           {title}
         </Text>
-        {/* <Button type="button">{buttonText}</Button> */}
       </div>
       <DiscoText>
         <span>CODE</span>

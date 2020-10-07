@@ -18,4 +18,9 @@ theme.colors.tag = {};
 theme.colors.tag.text = theme.colors.secondary;
 theme.colors.tag.bg = "#4c433a";
 
+// Blockquotes
+theme.colors.blockquotes = {};
+theme.colors.blockquotes.bg = theme.colors.grays["700"];
+
+
 export default theme;
