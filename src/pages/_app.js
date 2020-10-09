@@ -1,16 +1,38 @@
 import * as React from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import Router from "next/router";
+import TagManager from 'react-gtm-module'
 
 import GlobalStyles from "../styles/GlobalStyles";
 import ThemeProvider from "../styles/ThemeProvider";
 import { theme } from "../styles/themes/base";
 
 const GOOGLE_FONTS = 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Inter&family=Concert+One&display=fallback';
-const URL = "https://miguelcast.dev";
+
+const tagManagerArgs = {
+  gtmId: process.env.NEXT_PUBLIC_GTM_ID
+}
+
+const isClientAndGaIsEnabled = () => (typeof window !== "undefined" && window.ga);
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
+
+  React.useEffect(() => {
+    function sendPageView(url) {
+      if (isClientAndGaIsEnabled()) {
+        window.ga("set", { page: url, title: document.title });
+        window.ga("send", "pageview");
+      }
+    }
+    Router.events.on("routeChangeComplete", sendPageView);
+    return () => {
+      Router.events.off("routeChangeComplete", sendPageView);
+    };
+  }, [typeof window !== "undefined"]);
+
+  React.useEffect(() => {
+    TagManager.initialize(tagManagerArgs)
+  }, []);
 
   return (
     <>
