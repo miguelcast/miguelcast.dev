@@ -1,6 +1,6 @@
 import React from 'react';
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import Tag from "../System/Tag";
 

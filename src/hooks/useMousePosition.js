@@ -7,9 +7,10 @@ export default function useMousePosition(ref) {
     setMousePosition({ x: ev.offsetX, y: ev.offsetY });
   };
 
+
   useEffect(() => {
-    ref.current.addEventListener('mousemove', updateMousePosition);
-    return () => ref.current.removeEventListener('mousemove', updateMousePosition);
+    ref.current?.addEventListener('mousemove', updateMousePosition);
+    return () => ref.current?.removeEventListener('mousemove', updateMousePosition);
   }, []);
 
   return mousePosition;
