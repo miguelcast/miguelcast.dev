@@ -34,7 +34,7 @@ function DiscoText({ children }) {
       const newPositions = positions.map(pos => {
         return position.x / (pElement?.current?.offsetWidth || position.x) * (pos - -pos) + -pos;
       });
-      pElement.current.style.textShadow = getTextShadow(newPositions);
+      pElement.current.style.textShadow = getTextShadow( newPositions );
     }
   }, [position.x]);
 

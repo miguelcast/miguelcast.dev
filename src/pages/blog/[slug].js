@@ -96,6 +96,6 @@ export async function getStaticPaths() {
         slug
       }
     })),
-    fallback: true,
+    fallback: false,
   }
 }

@@ -42,6 +42,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="manifest" href="/favicons/site.webmanifest.json" />
         <meta name="theme-color" content={theme.primary} />
 
         <link rel="preload" as="style" href={GOOGLE_FONTS} />

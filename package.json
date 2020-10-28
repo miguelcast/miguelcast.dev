@@ -4,15 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
+    "export": "next export",
     "start": "next start"
   },
   "dependencies": {
     "@styled-system/css": "5.1.5",
     "graphql-request": "2.0.0",
-    "next": "9.5.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "next": "9.5.5",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "react-gtm-module": "^2.0.11",
     "react-icons": "3.10.0",
     "react-markdown": "4.3.1",
