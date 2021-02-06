@@ -10,19 +10,19 @@
   },
   "dependencies": {
     "@styled-system/css": "5.1.5",
-    "graphql": "^15.4.0",
-    "graphql-request": "3.3.0",
-    "next": "10.0.0",
+    "graphql": "^15.5.0",
+    "graphql-request": "3.4.0",
+    "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-gtm-module": "^2.0.11",
     "react-icons": "3.11.0",
-    "react-markdown": "5.0.2",
-    "react-syntax-highlighter": "^15.2.1",
-    "styled-components": "5.2.0",
+    "react-markdown": "5.0.3",
+    "react-syntax-highlighter": "^15.4.3",
+    "styled-components": "5.2.1",
     "styled-system": "5.1.5"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "1.11.1"
+    "babel-plugin-styled-components": "1.12.0"
   }
 }
