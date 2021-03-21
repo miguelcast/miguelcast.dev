@@ -25,12 +25,13 @@ export default function Home({ configuration, posts }) {
         <meta property="og:image:height" content="675" />
         <meta property="og:image" content="https://res.cloudinary.com/dtg6xzrhh/image/upload/f_auto,q_auto/v1602817385/miguelcast.dev/default_uf1jir.png" />
 
-        <meta property="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://miguelcast.dev/" />
-        <meta property="twitter:title" content="Miguel Cast" />
+        <meta property="twitter:domain" content="miguelcast.dev" />
+        <meta name="twitter:title" content="Miguel Cast" />
         <meta name="twitter:creator" content="@miguel__cast" />
-        <meta property="twitter:description" content="About Miguel Cast. Tutorials focus on React, Performance, GraphQl, CSS and HTML" />
-        <meta property="twitter:image" content="https://res.cloudinary.com/dtg6xzrhh/image/upload/f_auto,q_auto/v1602817385/miguelcast.dev/default_uf1jir.png" />
+        <meta name="twitter:description" content="About Miguel Cast. Tutorials focus on React, Performance, GraphQl, CSS and HTML" />
+        <meta name="twitter:image" content="https://res.cloudinary.com/dtg6xzrhh/image/upload/f_auto,q_auto/v1602817385/miguelcast.dev/default_uf1jir.png" />
       </Head>
       <Layout
         waves
@@ -86,10 +87,18 @@ const HOME_QUERY = `
 export async function getStaticProps() {
   const graphCMS = new GraphQLClient(process.env.API_GRAPH_CMS);
   const { configurations, posts } = await graphCMS.request(HOME_QUERY);
+
+  if (!configurations) {
+    return {
+      notFound: true
+    };
+  }
+
   return {
     props: {
       configuration: Object.fromEntries(configurations.map(config => Object.values(config))),
       posts
-    }
+    },
+    revalidate: 24 * 60 * 60
   };
 }
