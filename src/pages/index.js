@@ -44,7 +44,7 @@ export default function Home({ configuration, posts }) {
         )}
       >
         <section>
-          <Text as="h2" variant="title" fontSize={6} fontWeight={400} color="secondary">
+          <Text as="h2" variant="title" fontSize={5} fontWeight={400} color="secondary">
             <Dot /> Sharing my perspectives
           </Text>
           {posts?.map(post => (
