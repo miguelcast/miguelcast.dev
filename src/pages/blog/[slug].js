@@ -71,11 +71,19 @@ export async function getStaticProps({ params }) {
   const { post, configuration } = await graphCMS.request(POST_QUERY, {
     slug: params?.slug
   });
+
+  if (!post) {
+    return {
+      notFound: true
+    }
+  }
+
   return {
     props: {
       post,
       social: configuration?.value || null
-    }
+    },
+    revalidate: 24 * 60 * 60
   }
 }
 
