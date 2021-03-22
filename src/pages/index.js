@@ -87,18 +87,11 @@ const HOME_QUERY = `
 export async function getStaticProps() {
   const graphCMS = new GraphQLClient(process.env.API_GRAPH_CMS);
   const { configurations, posts } = await graphCMS.request(HOME_QUERY);
-
-  if (!configurations) {
-    return {
-      notFound: true
-    };
-  }
-
+  const configurationEntries = Object.fromEntries(configurations.map(config => Object.values(config)));
   return {
     props: {
-      configuration: Object.fromEntries(configurations.map(config => Object.values(config))),
+      configuration: configurationEntries,
       posts
-    },
-    revalidate: 24 * 60 * 60
+    }
   };
 }
