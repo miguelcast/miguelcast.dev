@@ -35,9 +35,9 @@ export default function ThemeProvider({ children }) {
     }
   }
 
-  if (!isMounted) {
+  /*if (!isMounted) {
     return null;
-  }
+  }*/
 
   return (
     <ThemeContext.Provider value={{ theme, onToggleTheme: toggleTheme }}>

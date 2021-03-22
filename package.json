@@ -1,7 +1,13 @@
 {
   "name": "miguelcast",
+  "description": "My personal website.",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Miguel Cast",
+    "url": "https://miguelcast.dev"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
