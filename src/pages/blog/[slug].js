@@ -3,16 +3,12 @@ import Head from "next/head";
 import styled from "styled-components";
 import css from "@styled-system/css";
 import { GraphQLClient } from 'graphql-request';
-import ReactMarkdown from 'react-markdown';
-import htmlParser from 'react-markdown/plugins/html-parser';
+import hydrate from 'next-mdx-remote/hydrate';
 
-import * as renderers from "../../components/MardownRenders";
 import Layout from "../../components/Layout/Layout";
 import Text from "../../components/System/Text";
-
-const parseHtml = htmlParser({
-  isValidNode: node => node.type !== 'script'
-})
+import { getFileBySlug } from "../../utils/getFileBySlug";
+import * as MDXComponents from "../../components/MardownRenders/MDXComponents";
 
 const Article = styled.article`
   font-size: 18px;
@@ -29,9 +25,19 @@ const Article = styled.article`
       color: 'secondary',
     })};
   }
+  p {
+    ${css({
+      fontSize: [18, 18, 19]
+    })};
+  }
 `;
 
 export default function BlogPost({ post, social }) {
+
+  const content = hydrate(post?.content, {
+    components: MDXComponents
+  });
+
   return(
     <Layout waves social={social} Hero={(
       <Text as="h1" variant="heading" textAlign="center" py={6} px={1}>{post?.name}</Text>
@@ -39,14 +45,9 @@ export default function BlogPost({ post, social }) {
       <Head>
         <title>{post?.name} | Miguel Cast</title>
       </Head>
-      {post?.content && (
+      {content && (
         <Article>
-          <ReactMarkdown
-            escapeHtml={false}
-            source={post.content}
-            renderers={renderers}
-            astPlugins={[parseHtml]}
-          />
+          {content}
         </Article>
       )}
     </Layout>
@@ -61,7 +62,6 @@ const POST_QUERY = `
     post (where: { slug: $slug }) {
       slug
       name
-      content
     }
   }
 `;
@@ -78,12 +78,16 @@ export async function getStaticProps({ params }) {
     }
   }
 
+  const content = await getFileBySlug(params?.slug);
+
   return {
     props: {
-      post,
+      post: {
+        ...post,
+        content: content.mdxSource
+      },
       social: configuration?.value || null
-    },
-    revalidate: 24 * 60 * 60
+    }
   }
 }
 

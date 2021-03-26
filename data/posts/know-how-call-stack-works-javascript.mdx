@@ -1,0 +1,27 @@
+What is it?
+<CallStack
+  code={`function above() {\n  return middle()\n}\n\nfunction middle() {\n  return below()\n}\n\nfunction below() {\n  return 1\n}\n\nabove()\n`}
+  stack={[
+    { name: '(anonymous)', line: 13 },
+    { name: 'above()', line: 2 },
+    { name: 'middle()', line: 6 },
+    { name: 'below()', line: 10 }
+  ]}
+  steps={[
+    { stack: [0], line: 13 },
+    { stack: [0, 1], line: 2 },
+    { stack: [0, 1, 2], line: 6 },
+    { stack: [0, 1, 2, 3], line: 10 },
+    { stack: [0, 1, 2, 3], line: 11 },
+    { stack: [0, 1, 2], line: 7 },
+    { stack: [0, 1], line: 3 },
+    { stack: [0], line: 13 },
+    { stack: [], line: 14 }
+  ]}
+/>
+
+Why we should learn this?
+* Helpful for debugging
+* Language fundamentals how works
+(anonymous) it is the main or first call
+Errors like Maximum call stack size exceeded

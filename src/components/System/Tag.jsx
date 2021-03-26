@@ -1,12 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
-import { color, space, border, typography } from "styled-system";
+import { color, space, border, layout, position, typography } from "styled-system";
 
 const Tag = styled('a')(
   color,
   space,
   border,
-  typography
+  typography,
+  layout,
+  position
 );
 
 Tag.defaultProps = {
