@@ -38,12 +38,25 @@ export default function BlogPost({ post, social }) {
     components: MDXComponents
   });
 
+  const metaTitle = `${post?.name} | Miguel Cast`;
+  const url = `https://miguelcast.dev/blog/${post?.slug}`;
+
   return(
     <Layout waves social={social} Hero={(
       <Text as="h1" variant="heading" textAlign="center" py={6} px={1}>{post?.name}</Text>
     )}>
       <Head>
-        <title>{post?.name} | Miguel Cast</title>
+        <title>{metaTitle}</title>
+        <meta name="title" content={metaTitle} />
+        <meta name="description" content={post?.shortDescription} />
+
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={post?.shortDescription} />
+
+        <meta property="twitter:url" content={url} />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={post?.shortDescription} />
       </Head>
       {content && (
         <Article>
@@ -60,8 +73,10 @@ const POST_QUERY = `
       value
     }
     post (where: { slug: $slug }) {
+      id
       slug
       name
+      shortDescription
     }
   }
 `;
