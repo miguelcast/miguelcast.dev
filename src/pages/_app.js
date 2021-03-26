@@ -1,11 +1,13 @@
 import * as React from "react";
 import Head from "next/head";
 import Router from "next/router";
-import TagManager from 'react-gtm-module'
+import { MDXProvider } from '@mdx-js/react';
+import TagManager from 'react-gtm-module';
 
 import GlobalStyles from "../styles/GlobalStyles";
 import ThemeProvider from "../styles/ThemeProvider";
 import { theme } from "../styles/themes/base";
+import * as MDXComponents from "../components/MardownRenders/MDXComponents";
 
 const GOOGLE_FONTS = 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Inter&family=Concert+One&display=fallback';
 
@@ -48,10 +50,12 @@ function MyApp({ Component, pageProps }) {
         <link rel="preload" as="style" href={GOOGLE_FONTS} />
         <link href={GOOGLE_FONTS} rel="stylesheet" />
       </Head>
-      <ThemeProvider>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <MDXProvider components={MDXComponents}>
+        <ThemeProvider>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </MDXProvider>
     </>
   );
 }

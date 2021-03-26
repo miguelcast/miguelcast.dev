@@ -74,7 +74,7 @@ function PostItem({ title, description, tags }) {
       <div className="tags">
         {tags?.map(tag => <Tag key={tag.id} as="span">{tag.name}</Tag>)}
       </div>
-      <Text as="p" variant="paragraph" display="contents" letterSpacing={0.8}>
+      <Text as="p" variant="paragraph" display="contents">
         {description}
       </Text>
       <Link as="span" variant="subtitle" fontSize={4} display="inline-flex" alignItems="center" mt={3}>
