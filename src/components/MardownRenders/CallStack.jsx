@@ -68,7 +68,7 @@ function CallStack({ code, stack, steps }) {
       </Box>
       <Box alignItems="stretch" position='relative' p={2}>
         <Tag position='absolute' top={0} left={0}>
-          Stack
+          Call Stack
         </Tag>
         <Box
           display="flex"
@@ -105,6 +105,25 @@ function CallStack({ code, stack, steps }) {
           })}
         </Box>
       </Box>
+      {steps?.[step]?.description && (
+        <Box
+          gridColumn="1/3"
+          display="flex"
+          bg="grays.700"
+          p={3}
+          pt={5}
+          mt={2}
+          mb={2}
+          mr={1}
+          borderRadius={1}
+          position='relative'
+        >
+          <Tag position='absolute' top={-10} left={0}>
+            Descripción | Paso {step + 1}
+          </Tag>
+          <Text p={0} m={0} color="white">{steps?.[step]?.description}</Text>
+        </Box>
+      )}
       <Box display="flex" alignItems="center">
         <Button px={3} py={1} mr={3} fontSize={3} onClick={resetStep}>
           Reset
@@ -112,7 +131,7 @@ function CallStack({ code, stack, steps }) {
         <Button variant="link" px={3} py={1} mr={3} fontSize={3} onClick={prevStep}>
           <FiSkipBack size={24} />
         </Button>
-        <Text p={0} m={0} mx={4}>
+        <Text p={0} m={0} mx={4} fontVariantNumeric="tabular-nums">
           {`${step + 1}/${steps.length}`}
         </Text>
         <Button variant="link" px={3} py={1} mr={3} fontSize={3} onClick={nextStep}>

@@ -1,4 +1,26 @@
-What is it?
+Para aprender como funciona Javascript existen múltiples conceptos que son claves, que nos ayudan a entender como es
+[interpretado](https://es.wikipedia.org/wiki/Int%C3%A9rprete_de_JavaScript) nuestro código, en que orden es ejecutado y
+como podemos buscar errores más fácilmente. Call Stack es un importante concepto que aparece de primero en la lista del
+famoso repositorio ["33 Concepts Every JavaScript Developer Should Know"](https://github.com/leonardomso/33-js-concepts#1-call-stack)
+que invito a que revises después de terminar de ver esta post.
+
+## Stack o Pila
+
+Para continuar vamos a entender que es una pila o stack. Este es un algoritmo conocido por sus siglas
+[FIFO](https://es.wikipedia.org/wiki/Last_in,_first_out) que significa **Last in, First up**. Un ejemplo para entender
+mejor el concepto es cuando pensamos en varios libros uno sobre otro, 📚 a esto lo llamamos una pila de libros,
+si queremos poner un nuevo libro, lo hacemos poniéndolo encima de los que ya tenemos y si queremos obtener el libro del
+medio, debemos ir quitando los últimos libros que pusimos que son los de arriba hasta llegar al que queremos.
+
+<img src="https://media.giphy.com/media/KDYB0cH4HW8xc3VIAx/giphy.gif" alt="books stack" loading="lazy" />
+
+## Entonces que es el Call Stack
+
+En español es conocido como [Pila de llamadas](https://developer.mozilla.org/es/docs/Glossary/Call_stack), este es usado
+por Javascript para saber en qué función se encuentra el punto de ejecución, poder agregar las siguientes funciones que
+se van a ejecutar y por cuáles funciones ha pasado la ejecución antes de llegar a la actual. Así Javascript con esta
+información podra saber a donde tiene que volver para seguir ejecutando la siguiente función.
+
 <CallStack
   code={`function above() {\n  return middle()\n}\n\nfunction middle() {\n  return below()\n}\n\nfunction below() {\n  return 1\n}\n\nabove()\n`}
   stack={[
@@ -8,20 +30,85 @@ What is it?
     { name: 'below()', line: 10 }
   ]}
   steps={[
-    { stack: [0], line: 13 },
-    { stack: [0, 1], line: 2 },
-    { stack: [0, 1, 2], line: 6 },
-    { stack: [0, 1, 2, 3], line: 10 },
-    { stack: [0, 1, 2, 3], line: 11 },
-    { stack: [0, 1, 2], line: 7 },
-    { stack: [0, 1], line: 3 },
-    { stack: [0], line: 13 },
-    { stack: [], line: 14 }
+    { stack: [0], line: 13, description: 'En la línea 13 comienza nuestra ejecución, esta función inicial es llamada como (anonymous), es la función principal de la ejecución, cuando esta función no exista es porque hemos terminado la ejecución.' },
+    { stack: [0, 1], line: 2, description: 'Ingresamos a la función llamada en la línea 13, above() y es apilada en el call stack, también podemos ver que avanzamos a la línea 2 del código.' },
+    { stack: [0, 1, 2], line: 6, description: 'Como middle() fue llamada en la línea 2 al avanzar en la ejecución ingresamos a esta función y es apilada en el call stack.' },
+    { stack: [0, 1, 2, 3], line: 10, description: 'Igual que el paso anterior below() es llamada y al avanzar ingresamos en ella y es apilada.' },
+    { stack: [0, 1, 2, 3], line: 10, description: 'below() es nuestra última funcioń, en la línea 10 tenemos un return que nos indica la finalización de la función.' },
+    { stack: [0, 1, 2], line: 6, description: 'Retornamos a la línea 6 y se elimina del call stack la función below(). ¿Cómo sabía Javascript que podía retornar a la función middle()? Al desapilar below() la siguiente función en la pila era middle() con referencia a la línea 6 y así Javascript usa el call stack para saber donde debe continuar la ejecución.' },
+    { stack: [0, 1], line: 2, description: 'Igual que en el paso anterior al continuar la ejecución se quita de la pila la función middle() y seguimos en la función above() donde encontramos otro return.' },
+    { stack: [0], line: 13, description: 'En el paso anterior al encontrar el return y continuar la ejecución se remueve la función above() de la pila y volvemos a la función (anonymous) en la línea 13 donde comenzó la ejecución con nuestro valor retornado 1.' },
+    { stack: [], line: 14, description: 'Seguimos a la línea 14 donde nuestro programa termina y es removida la función (anonymous)' }
   ]}
 />
 
-Why we should learn this?
-* Helpful for debugging
-* Language fundamentals how works
-(anonymous) it is the main or first call
-Errors like Maximum call stack size exceeded
+> En el Call Stack aparte del nombre de la función y número de la línea se guarda también el nombre del archivo donde
+se encuentra y su contexto actual de ejecución o como es conocido por su nombre en inglés [Scope](https://developer.mozilla.org/es/docs/Glossary/Scope),
+esas variables a las cuales puedo acceder, es decir, que son "visibles" para una función.
+
+## ¿Por qué es importante conocer el Call Stack?
+
+* Nos ayuda a entender como funciona el debbuger y poder encontrar mucho más rápido los bugs del proyecto.
+* Ha entender como funciona Javascript y por ende al pensar en contruir nuestro codígo lo haremos mucho más rapido y
+concientes.
+* En las entrevistas suelen preguntas por estos conceptos de Javascript.
+
+No solo es importante conocer el Call Stask sino también cada uno de esos conceptos claves o formas en la que funciona
+Javascript para entender cada vez más este lenguaje que usamos casi a diario en nuestros proyectos.
+
+## ¿Y que más podemos aprender del Call Stack?
+
+### Maximum call stack size exceeded
+
+Si te has encontrado con este mensaje de error **Uncaught RangeError: Maximum call stack size exceeded** en la consola
+de las herramientas del desarrollador del navegador se debe a que el call stack tiene un limite que depende del
+navegador, puedes ver un poco más de este limite en el post [The maximum call stack size](https://2ality.com/2014/04/call-stack-size.html).
+
+```javascript
+function above() {
+  return above()
+}
+
+above()
+```
+Este código es un ejemplo básico de como podemos exceder el límite del call stack a propósito y verlo en consola de las
+herramientas del desarrollador de nuestro browser, este error casi siempre se ocasiona al implementar un llamado
+[recursivo](https://es.wikipedia.org/wiki/Recursi%C3%B3n) de una función, es difícil exponer una solución específica
+para cuando te aparezca este mensaje error, pero es de gran ayuda revisar que nuestro código si está relacionado con
+recursión asegurarnos de que haya un caso donde no se continúe llamando más la misma función y la ejecución pueda terminar.
+
+### ¿Cómo hacemos seguimiento del call stack de nuestro código?
+
+Para esto podemos usar dentro de una función que queramos saber por donde ha pasado la ejecución hasta llegar hasta
+la línea que deseemos podemos usar la función `console.trace()`, esta función nos mostrará el estado actual del nuestro
+call stack.
+```javascript
+function above() {
+  return below()
+}
+
+function below() {
+  console.trace()
+}
+
+above()
+```
+```console
+below	@	VM4271:6
+above	@	VM4271:2
+(anonymous)	@	VM4271:9
+```
+También tenemos las herramientas del desarrollador del navegador, por ejemplo en Chrome podemos acceder con la tecla
+`F12` en Window y `OPT + CMD + i` en Mac, en la sección de `source` podemos agregar un breakpoint, en el post
+[Pause your code with breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/) puedes aprender
+como agregar uno, y luego al lado derecho de nuestras herramientas de desarrollador podemos ver la sección con el nombre
+`Call Stack` donde podemos ver nuestras funciones y como se va actualizando a medida que vamos avanzando en la ejecución.
+
+<img
+  src="https://res.cloudinary.com/dtg6xzrhh/image/upload/v1618603900/miguelcast.dev/Captura_de_Pantalla_2021-04-16_a_la_s_3.09.08_p._m._mdmadk.png"
+  alt="call stack dev tools"
+  loading="lazy"
+/>
+
+Si quiere profundizar más en este concepto, te recomiendo el video del canal de Youtube La Cocina del Código llamado
+[1. La PILA DE EJECUCIÓN (Call Stack) de JAVASCRIPT | JS en ESPAÑOL](https://youtu.be/ygA5U7Wgsg8).

@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { variant, typography, color, space, display, flexbox } from "styled-system";
+import { variant, typography, color, space, display, flexbox, system } from "styled-system";
 
 const Text = styled('p')(
   space,
@@ -29,12 +29,15 @@ const Text = styled('p')(
         fontFamily: "alternative"
       }
     }
+  }),
+  system({
+    fontVariantNumeric: true
   })
 );
 
 Text.defaultProps = {
   variant: 'paragraph',
-  color: 'text',
+  color: 'text'
 }
 
 export default Text;
