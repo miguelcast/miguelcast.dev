@@ -29,6 +29,17 @@ const Article = styled.article`
     ${css({
       fontSize: [18, 18, 19]
     })};
+    a {
+      ${css({
+        color: 'secondary',
+        fontWeight: 'bold'
+      })};
+    }
+  }
+  img {
+    ${css({
+      borderRadius: 1,
+    })};
   }
 `;
 
