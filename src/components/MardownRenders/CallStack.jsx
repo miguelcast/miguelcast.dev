@@ -48,7 +48,7 @@ function CallStack({ code, stack, steps }) {
   const currentStack = steps?.[step]?.stack;
 
   return (
-    <Box display="grid" gridRow={1} gridTemplateColumns="1.5fr 1fr" gridColumnGap={12}>
+    <Box display="grid" gridRow={1} gridTemplateColumns={['1fr', '1.5fr 1fr']} gridColumnGap={[10, 12]}>
       <Tag position='absolute'>
         Code
       </Tag>
@@ -107,7 +107,7 @@ function CallStack({ code, stack, steps }) {
       </Box>
       {steps?.[step]?.description && (
         <Box
-          gridColumn="1/3"
+          gridColumn={['1', "1/3"]}
           display="flex"
           bg="grays.700"
           p={3}

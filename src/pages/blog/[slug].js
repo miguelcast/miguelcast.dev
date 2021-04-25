@@ -39,6 +39,7 @@ const Article = styled.article`
   img {
     ${css({
       borderRadius: 1,
+      maxWidth: '100%'
     })};
   }
 `;
