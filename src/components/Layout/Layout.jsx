@@ -6,6 +6,7 @@ import css from "@styled-system/css";
 import Logo from "../System/Logo";
 import Text from "../System/Text.jsx";
 import Social from "../System/Social";
+import Newsletter from "../System/Newsletter";
 import Waves from "../Hero/Waves";
 
 const Top = styled.div`
@@ -37,13 +38,13 @@ const Main = styled.main`
     px: [4, null, null, 0]
   })};
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 3rem;
 `;
 
 const Footer = styled.footer`
   ${css({
   bg: "waves",
-  mt: 5,
+  mt: 0,
   mb: '25px',
   px: [4, null, null, 0],
   py: 3
@@ -57,7 +58,7 @@ const Footer = styled.footer`
     0 25px 0 #640E0E66;
 `;
 
-function Layout({ waves, social, Hero, children }) {
+function Layout({ waves, social, Hero, newsletter, children }) {
   return (
     <>
       {waves && <Waves />}
@@ -80,6 +81,8 @@ function Layout({ waves, social, Hero, children }) {
       <Main>
         {children}
       </Main>
+
+      {newsletter && <Newsletter />}
 
       <Footer>
         <Text color="textLight" fontSize={2} variant="alternative">

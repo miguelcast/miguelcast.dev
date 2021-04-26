@@ -1,12 +1,13 @@
 import * as React from "react";
 import styled from "styled-components";
-import { variant, space, typography, border, compose } from "styled-system";
+import { variant, space, typography, border, layout, compose } from "styled-system";
 
 const Button = styled('button')(
   compose(
     border,
     space,
     typography,
+    layout,
     variant({
       variants: {
         primary: {

@@ -54,7 +54,7 @@ export default function BlogPost({ post, social }) {
   const url = `https://miguelcast.dev/blog/${post?.slug}`;
 
   return(
-    <Layout waves social={social} Hero={(
+    <Layout waves newsletter social={social} Hero={(
       <Text as="h1" variant="heading" textAlign="center" py={6} px={1}>{post?.name}</Text>
     )}>
       <Head>

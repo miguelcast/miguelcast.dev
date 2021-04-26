@@ -38,6 +38,7 @@ export default function Home({ configuration, posts }) {
       </Head>
       <Layout
         waves
+        newsletter
         social={configuration?.social}
         Hero={(
           <Hero
