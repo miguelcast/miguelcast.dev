@@ -22,5 +22,10 @@ theme.colors.tag.bg = "#4c433a";
 theme.colors.blockquotes = {};
 theme.colors.blockquotes.bg = "#1d1f21";
 
+// Code inline
+theme.colors.code = {};
+theme.colors.code.bg = theme.colors.grays["700"];
+theme.colors.code.text = theme.colors.white;
+
 
 export default theme;

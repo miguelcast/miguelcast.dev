@@ -35,6 +35,14 @@ const Article = styled.article`
         fontWeight: 'bold'
       })};
     }
+    code {
+      ${css({
+        color: 'code.text',
+        backgroundColor: 'code.bg',
+        paddingLeft: 1,
+        paddingRight: 1
+      })};
+    }
   }
   img {
     ${css({

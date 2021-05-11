@@ -78,7 +78,7 @@ function PostItem({ title, description, tags }) {
         {description}
       </Text>
       <Link as="span" variant="subtitle" fontSize={4} display="inline-flex" alignItems="center" mt={3}>
-        Read more{' '}
+        Leer más{' '}
         <FiArrowRight />
         <FiArrowRight />
         <FiArrowRight />

@@ -1,0 +1,66 @@
+JavaScript moderno son todas esas sintaxis, semántica y funcionalidades que se van agregando a la
+especificación del lenguaje cada cierto periodo de tiempo, este es creado y controlado por la asociación
+[ECMA-international](https://www.ecma-international.org/technical-committees/tc39/) que se encarga de los cambios
+de [ECMAScript(JavaScript)](https://www.ecma-international.org/technical-committees/tc39/?tab=general).
+
+Desde el 2015 fue lanzada la versión [ES6](http://es6-features.org/) o también conocida como ECMAScript 2015 después de
+mucho tiempo que no se habían agregado cambios al lenguaje, en esta versión fueron agregados cambios que usamos
+hoy en el día a día como: Arrow functions, Classes, Template strings, Destructuring, variables let y const, Promises y
+otros más que mejoraron mucho la experiencia de desarrollo. Después de esto han salido nuevas especificaciones de
+ECMAScript en 2016(ES7), 2017(ES8), 2018(ES9), 2019(ES10), 2020(ES11) y 2021(ES12).
+
+En este post vamos a ver cuáles cambios de estas últimas especificaciones del lenguaje podemos usar en el framework de
+React llamado [Next.js](https://nextjs.org) sin hacer ninguna configuración adicional de [Babel](https://babeljs.io).
+
+## Optional Chaining
+
+Cuando intentamos acceder a una estructura de datos por ejemplo un objeto a un nivel profundo se debe verificar si los
+nodos del medio existen y así evitar que JavaScript nos devuelva una excepción.
+
+```javascript
+const nestedObject = { a: { b: { c: true } } };
+// Caso 1
+nestedObject.a.b.c; // true
+// Caso 2
+nestedObject.d; // undefined
+// Caso 3
+nestedObject.d.e; // TypeError: Cannot read property 'e' of undefined
+```
+
+En el caso 1 accedemos hasta la propiedad `c` y nos retorna  el valor asignado `true`, este es el camino feliz, pero
+como no siempre tenemos un camino feliz en el caso 2 al tener el objeto e intentar acceder a la propiedad `d` que no
+existe dentro de la estructura obtenemos un `undefined` y el último que es el caso 3, si intentamos acceder a un nivel
+más que en el caso 2 JavaScript nos devuelve una excepción `TypeError: Cannot read property 'e' of undefined`, para
+evitar que esto nos suceda debemos hacer lo siguiente:
+
+```javascript
+nestedObject.d && nestedObject.d.e; // undefined
+nestedObject.d && nestedObject.d.e && nestedObject.d.e.f; // undefined
+```
+Para resolver el caso 3 tenemos que validar si existe la propiedad del nivel anterior, en este caso la propiedad `d` y
+por cada nivel que agreguemos a nuestro objeto debemos repetir parte del código validando el siguiente nivel. Para
+resolver esto de una forma más sencilla y que nuestro código no se vea más limpio aquí enrtra el operador de
+encadenamiento opcional o [optional chaining](https://github.com/tc39/proposal-optional-chaining), para usarlo usamos
+el operador `?.` en vez del operador `.` que usamos normalmente para acceder a las propiedades de un objeto. Para
+resolver el caso anterior lo podemos hacer de la siguiente manera:
+
+```javascript
+// Sin optional chaining
+nestedObject.d && nestedObject.d.e && nestedObject.d.e.f; // undefined
+// Con optional chaining
+nestedObject.d?.e?.f; // undefined
+```
+Vamos a ver otros ejemplos en los cuales podemos usar el optional chaining:
+
+```javascript
+// Con arrays
+const nestedArray = [ [ [ true ] ] ];
+nestedArray[0][0][0] // true
+nestedArray[1][1][1] // TypeError: Cannot read property '1' of undefined
+nestedArray[1]?.[1]?.[1] // undefined
+
+// Con funciones
+const nestedObject = { a: { b: () => true } };
+nestedObject.a.b(); // true
+nestedObject.c?.d?.(); // undefined
+```

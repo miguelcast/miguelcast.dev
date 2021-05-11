@@ -12,7 +12,7 @@ import Hero from "../components/Hero/Hero";
 const metaTitle = "Miguel Cast";
 const description = "About Miguel Cast. Tutorials focus on Javascript, Performance, GraphQl, React, CSS and HTML";
 
-export default function Home({ configuration, posts }) {
+export default function Home({ configuration, posts, tags }) {
   return (
     <>
       <Head>
@@ -50,7 +50,7 @@ export default function Home({ configuration, posts }) {
       >
         <section>
           <Text as="h2" variant="title" fontSize={5} fontWeight={400} color="secondary">
-            <Dot /> Sharing my perspectives
+            <Dot /> Compartiendo mis perspectivas
           </Text>
           {posts?.map(post => (
             <Link key={post.id} href="/blog/[slug]" as={`/blog/${post.slug}`}>
@@ -85,17 +85,22 @@ const HOME_QUERY = `
         name
       }
     }
+    tags (orderBy: name_ASC) {
+      id
+      name
+    }
   }
 `;
 
 export async function getStaticProps() {
   const graphCMS = new GraphQLClient(process.env.API_GRAPH_CMS);
-  const { configurations, posts } = await graphCMS.request(HOME_QUERY);
+  const { configurations, posts, tags } = await graphCMS.request(HOME_QUERY);
   const configurationEntries = Object.fromEntries(configurations.map(config => Object.values(config)));
   return {
     props: {
       configuration: configurationEntries,
-      posts
+      posts,
+      tags
     }
   };
 }

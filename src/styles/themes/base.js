@@ -13,7 +13,8 @@ const theme = {
     yellow: '#F5D18C',
     yellows: {
       100: '#F5D18C',
-      500: '#f5a713'
+      500: '#f5a713',
+      700: '#ca8503'
     },
     white: '#ffffff'
   },

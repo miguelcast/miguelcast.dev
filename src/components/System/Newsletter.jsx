@@ -43,12 +43,12 @@ function Newsletter() {
           gridTemplateColumns={["1fr", "1.3fr 1fr auto"]}
           maxWidth="maxContainer"
         >
-          <Text as="label" htmlFor="bd-email" variant="alternative" fontSize={5}>
-            Want posts updates sent <wbr />straight to your inbox?
+          <Text as="label" htmlFor="bd-email" variant="alternative" fontSize={5} pb={[3, 0]}>
+            Te gustaría recibir nuevos posts <wbr /> sobre Front-end y más en tu correo?
           </Text>
-          <Input type="email" name="email" id="bd-email" placeholder="Your e-mail" required />
+          <Input type="email" name="email" id="bd-email" placeholder="Tu e-mail" required />
           <input type="hidden" value="1" name="embed"/>
-          <Button type="submit" height={50}>Join</Button>
+          <Button type="submit" height={50}>Suscribirse</Button>
         </Box>
       </form>
     </Box>
