@@ -1,18 +1,18 @@
-JavaScript moderno son todas esas sintaxis, semántica y funcionalidades que se van agregando a la
+JavaScript moderno se refiere a todas esas funcionalidades, sintaxis y semántica que se va agregando a la
 especificación del lenguaje cada cierto periodo de tiempo, este es creado y controlado por la asociación
 [ECMA-international](https://www.ecma-international.org/technical-committees/tc39/) que se encarga de los cambios
 de [ECMAScript(JavaScript)](https://www.ecma-international.org/technical-committees/tc39/?tab=general).
 
 Desde el 2015 fue lanzada la versión [ES6](http://es6-features.org/) o también conocida como ECMAScript 2015 después de
-mucho tiempo que no se habían agregado cambios al lenguaje, en esta versión fueron agregados cambios que usamos
-hoy en el día a día como: Arrow functions, Classes, Template strings, Destructuring, variables let y const, Promises y
-otros más que mejoraron mucho la experiencia de desarrollo. Después de esto han salido nuevas especificaciones de
-ECMAScript en 2016(ES7), 2017(ES8), 2018(ES9), 2019(ES10), 2020(ES11) y 2021(ES12).
+mucho tiempo que no se habían agregado cambios al lenguaje, en esta versión fueron agregados cambios que usamos en
+el día a día como: Arrow functions, Classes, Template strings, Destructuring, variables let y const, Promises y
+otros más que mejoraron mucho la experiencia de desarrollo. Después esta versión han salido nuevas especificaciones de
+ECMAScript como 2016(ES7), 2017(ES8), 2018(ES9), 2019(ES10), 2020(ES11) y 2021(ES12).
 
 En este post vamos a ver cuáles cambios de estas últimas especificaciones del lenguaje podemos usar en el framework de
 React llamado [Next.js](https://nextjs.org) sin hacer ninguna configuración adicional de [Babel](https://babeljs.io).
 
-## Optional Chaining
+## Optional Chaining (?.)
 
 Cuando intentamos acceder a una estructura de datos por ejemplo un objeto a un nivel profundo se debe verificar si los
 nodos del medio existen y así evitar que JavaScript nos devuelva una excepción.
@@ -28,10 +28,10 @@ nestedObject.d.e; // TypeError: Cannot read property 'e' of undefined
 ```
 
 En el caso 1 accedemos hasta la propiedad `c` y nos retorna  el valor asignado `true`, este es el camino feliz, pero
-como no siempre tenemos un camino feliz en el caso 2 al tener el objeto e intentar acceder a la propiedad `d` que no
-existe dentro de la estructura obtenemos un `undefined` y el último que es el caso 3, si intentamos acceder a un nivel
+como no siempre tenemos un camino feliz en el caso 2 intentamos acceder a la propiedad `d` que no
+existe dentro de la estructura del objeto y obtenemos un `undefined`, en el último caso, si intentamos acceder a un nivel
 más que en el caso 2 JavaScript nos devuelve una excepción `TypeError: Cannot read property 'e' of undefined`, para
-evitar que esto nos suceda debemos hacer lo siguiente:
+evitar que esto nos suceda podemos hacer lo siguiente:
 
 ```javascript
 nestedObject.d && nestedObject.d.e; // undefined
@@ -39,12 +39,12 @@ nestedObject.d && nestedObject.d.e && nestedObject.d.e.f; // undefined
 ```
 Para resolver el caso 3 tenemos que validar si existe la propiedad del nivel anterior, en este caso la propiedad `d` y
 por cada nivel que agreguemos a nuestro objeto debemos repetir parte del código validando el siguiente nivel. Para
-resolver esto de una forma más sencilla y que nuestro código no se vea más limpio aquí enrtra el operador de
-encadenamiento opcional o [optional chaining](https://github.com/tc39/proposal-optional-chaining), para usarlo usamos
-el operador `?.` en vez del operador `.` que usamos normalmente para acceder a las propiedades de un objeto. Para
+resolver esto de una forma más sencilla y que nuestro código se vea más limpio aquí entra el operador de
+encadenamiento opcional o [optional chaining](https://github.com/tc39/proposal-optional-chaining), lo usamos con
+el símbolo `?.` en vez del operador `.` que usamos normalmente para acceder a las propiedades de un objeto. Para
 resolver el caso anterior lo podemos hacer de la siguiente manera:
 
-```javascript
+
 // Sin optional chaining
 nestedObject.d && nestedObject.d.e && nestedObject.d.e.f; // undefined
 // Con optional chaining
@@ -64,3 +64,31 @@ const nestedObject = { a: { b: () => true } };
 nestedObject.a.b(); // true
 nestedObject.c?.d?.(); // undefined
 ```
+
+## Nullish Coalescing Operator (??)
+
+Cuando estamos desarrollando en ocasiones requerimos de algún valor por defecto al momento de asignar un valor a
+una variable, una forma fácil y conocida de hacerlo es con el operador `||`.
+
+```javascript
+const objectA = { a: 'NextJs', b: '' };
+const var1 = objectA.a || 'Gatsby'; // NextJs
+const var2 = objectA.c || 'No existe'; // No existe
+const var3 = objectA.b || 'Estaba vacío'; // Estaba vacío
+```
+
+Veamos como funciona el operador `||`, por ejemplo en el primer caso el objeto `objectA.a` sí existe y tiene
+un string asignado, en este caso asigna el valor `NextJS` a la variable `var1`. En el segundo caso tratamos
+de acceder a la propiedad `c` del objeto, esta propiedad no existe, por consiguiente su valor es `undefined`, entonces
+el valor asignado a `var2` es el string `No existe`, y en el último caso la propiedad `b` tiene un string vacío,
+cuando evaluamos este valor Javascript lo lee como un valor `false` por eso para `var3` se asigna el valor por default con
+el string `Estaba vacío`. Cuando usamos el operador `||` al encontrar al inicio un valor `null`, `undefined` u otro
+de los [valores falsos en JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) devuelve o asigna el
+valor alternativo que ponemos después de este operador.
+
+En ocasiones queremos que el valor por default se asigne solo cuando el valor inicial sea `undefined` o `null`, y cuando
+tenemos un `falsy value` como un string vació, `0`, `false`, `NaN` entre otros queremos asignar este valor, por ejemplo
+si estamos manejando valores de moneda un `0` es un valor permitido o si tenemos un estado de un producto el `false`
+también es permitido, en estos casos podemos validar con el Nullish Coalescing Operator (??).
+
+
