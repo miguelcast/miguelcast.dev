@@ -44,12 +44,13 @@ encadenamiento opcional o [optional chaining](https://github.com/tc39/proposal-o
 el símbolo `?.` en vez del operador `.` que usamos normalmente para acceder a las propiedades de un objeto. Para
 resolver el caso anterior lo podemos hacer de la siguiente manera:
 
-
+```javascript
 // Sin optional chaining
 nestedObject.d && nestedObject.d.e && nestedObject.d.e.f; // undefined
 // Con optional chaining
 nestedObject.d?.e?.f; // undefined
 ```
+
 Vamos a ver otros ejemplos en los cuales podemos usar el optional chaining:
 
 ```javascript
