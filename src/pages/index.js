@@ -8,6 +8,8 @@ import Text from "../components/System/Text";
 import Dot from "../components/System/Dot";
 import PostItem from "../components/Post/PostItem";
 import Hero from "../components/Hero/Hero";
+import Tag from "../components/System/Tag";
+import Box from "../components/System/Box";
 
 const metaTitle = "Miguel Cast";
 const description = "About Miguel Cast. Tutorials focus on Javascript, Performance, GraphQl, React, CSS and HTML";
@@ -39,6 +41,7 @@ export default function Home({ configuration, posts, tags }) {
       <Layout
         waves
         newsletter
+        aside
         social={configuration?.social}
         Hero={(
           <Hero
@@ -64,6 +67,16 @@ export default function Home({ configuration, posts, tags }) {
             </Link>
           ))}
         </section>
+        <aside>
+          <Text as="h2" variant="title" fontSize={5} fontWeight={400} color="secondary" pt={50}>
+            Categorías
+          </Text>
+          <Box  display='flex' flexWrap='wrap'>
+            {tags?.map(tag => <Tag key={tag.id} as="a" display="inline-block" margin={1}>
+              {tag.name}
+            </Tag>)}
+          </Box>
+        </aside>
       </Layout>
     </>
   )
