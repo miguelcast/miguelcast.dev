@@ -39,6 +39,11 @@ const Main = styled.main`
   })};
   position: relative;
   margin: 0 auto 3rem;
+  ${(aside) => aside && css({
+    display: 'grid',
+    gridTemplateColumns: '1fr 400px',
+    gridGap: '0.8rem'
+  })};
 `;
 
 const Footer = styled.footer`
@@ -58,7 +63,7 @@ const Footer = styled.footer`
     0 25px 0 #640E0E66;
 `;
 
-function Layout({ waves, social, Hero, newsletter, children }) {
+function Layout({ waves, social, Hero, newsletter, aside, children }) {
   return (
     <>
       {waves && <Waves />}
@@ -78,7 +83,7 @@ function Layout({ waves, social, Hero, newsletter, children }) {
         </Section>
       </Top>
 
-      <Main>
+      <Main aside={+aside}>
         {children}
       </Main>
 
