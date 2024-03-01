@@ -91,7 +91,7 @@ function Layout({ waves, social, Hero, newsletter, aside, children }) {
 
       <Footer>
         <Text color="textLight" fontSize={2} variant="alternative">
-          © 2020-present Miguel Cast. All Rights Reserved.
+          © 2020-present Miguel Cast.
         </Text>
       </Footer>
     </>
