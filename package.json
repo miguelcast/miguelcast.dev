@@ -1,54 +1,34 @@
 {
   "name": "miguelcast",
   "description": "My personal website.",
-  "version": "0.1.0",
   "private": true,
-  "license": "MIT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "4.5.10",
+    "tailwindcss": "^3.4.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "7.4.0",
+    "@typescript-eslint/parser": "7.4.0",
+    "eslint": "8.57.0",
+    "eslint-plugin-astro": "0.33.1",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-astro": "0.13.0",
+    "prettier-plugin-tailwindcss": "0.5.13"
+  },
   "author": {
     "name": "Miguel Cast",
     "url": "https://miguelcast.dev"
   },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "test": "jest",
-    "test:w": "jest --watch",
-    "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "@mdx-js/loader": "1.6.22",
-    "@mdx-js/react": "1.6.22",
-    "@next/mdx": "10.0.9",
-    "@styled-system/css": "5.1.5",
-    "framer-motion": "4.0.3",
-    "graphql": "^15.5.0",
-    "graphql-request": "3.4.0",
-    "next": "12.1.0",
-    "next-mdx-remote": "2.1.3",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-gtm-module": "^2.0.11",
-    "react-icons": "4.2.0",
-    "react-markdown": "5.0.3",
-    "react-syntax-highlighter": "^15.4.3",
-    "styled-components": "5.2.1",
-    "styled-system": "5.1.5"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/react": "^6.1.21",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/react-hooks": "^5.1.0",
-    "babel-jest": "^26.6.3",
-    "babel-loader": "^8.2.2",
-    "babel-plugin-styled-components": "1.12.0",
-    "jest": "^26.6.3",
-    "react-test-renderer": "^17.0.1"
-  }
+  "keywords": [],
+  "license": "ISC"
 }

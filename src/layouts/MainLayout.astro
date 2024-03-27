@@ -1,0 +1,21 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Miguel Cast Dev</title>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <nav class="bg-blue-800 p-2 flex gap-x-5">
+      <a href="/" class="hover:underline">Home</a>
+      <a href="/about" class="hover:underline">Posts</a>
+      <a href="/contact" class="hover:underline">Contact</a>
+    </nav>
+    <article class="p-4">
+      <slot />
+    </article>
+  </body>
+</html>
